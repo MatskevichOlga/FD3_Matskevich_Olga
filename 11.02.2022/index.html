@@ -4,9 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="IShop.css">
     <title>ishop</title>
 </head>
 <body>
-    
+<div id="container"></div>
+
+<script src="https://unpkg.com/react@15/dist/react.js"></script> 
+<script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script> 
+<script src="IShop.js"></script>
+
+<script>
+ var titleText='Наличие авто на складе "Атлант-Н"';
+
+    var headerArr=[
+      {text:'Наименование', code:1},
+      {text:'Стоимость', code:2},
+      {text:'Изображение', code:3},
+      {text:'Остаток на складе', code:4}
+    ];
+
+    var productsArr=[
+    {text:'Mercedes-Benz GL-Класс',code:1,price:128700,image:'https://stock-service.atlantm.by/uploads/cars-amp/9v/uc/9VucdCIoWO_1000_550.webp' ,count:8}, 
+    {text:'Land Rover Range Rover Velar',code:2,price:170269,image:'https://stock-service.atlantm.by/uploads/cars-amp/0w/na/0wNaSV7tvv_1000_550.webp' ,count:5}, 
+    {text:'Toyota Land Cruiser',code:3,price:229437,image:'https://stock-service.atlantm.by/uploads/cars-amp/hp/av/HPAVWT9PdQ_1000_550.webp' ,count:4}, 
+    {text:'Jaguar I-Pace',code:4,price:204876,image:'https://stock-service.atlantm.by/uploads/cars-amp/xr/zk/xRzKIKvLRg_1000_550.webp' ,count:2}
+
+    ];
+    ReactDOM.render(
+      React.createElement(IShop,{title:titleText,header:headerArr,products:productsArr}), 
+      document.getElementById('container') 
+    );
+</script>
+
+
+
 </body>
 </html>
