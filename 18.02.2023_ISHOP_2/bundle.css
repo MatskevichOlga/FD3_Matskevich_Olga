@@ -1,0 +1,186 @@
+.IShop
+{
+ max-width: 100%;
+ width: 1000px;
+ padding: 24px;
+ margin: 0 auto;
+ color: #1b1b1b;
+ font-family: 'Roboto', sans-serif;
+ font-size: 20px;
+ line-height: 28px;
+}
+
+h1{
+  text-align: center;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 38px;
+  line-height: 46px;
+}
+.IShop .header, .IShop .products{
+  width: 100%;
+  border: 1px solid #2b97da;
+}
+.IShop .products{
+  border-top: none;
+}
+.IShop .blue{
+  background: #e5f5ff;
+}
+.IShop .green{
+  background: #3af95d52;
+}
+.IShop .header{
+  border-bottom: none;
+}
+
+.IShop .header,
+.IShop .product{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+
+}
+.IShop .header{
+  background: #e3f2fc;
+}
+.IShop .header_title{
+  width: 20%;
+  padding: 16px;
+  font-size: 20px;
+  line-height: 28px;
+  border: 1px solid #2b97da;
+  text-align: center;
+  font-weight: 600;
+}
+.IShop .product_item, .IShop .price,
+.IShop .image, .IShop .count, .IShop .button{
+  width: 20%;
+  padding: 16px;
+  font-size: 18px;
+  line-height: 24px;
+  border: 1px solid #2b97da;
+  min-height: 100px;
+  text-align: center;
+
+}
+.IShop .image{
+ /* padding: 8px;*/
+  line-height: 1;
+}
+.IShop .button{
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+.IShop .button button{
+  text-transform: uppercase;
+  background: #db1f1f68;
+  font-weight: 400;
+  font-size: 14px;
+  padding: 5px;
+  padding-top: 6px;
+  border-radius: 3px;
+}
+.IShop .product_item{
+  text-align: left;
+}
+.IShop img{
+ max-width:100%;
+ border-radius: 3px;
+
+}.IShop
+{
+ max-width: 100%;
+ width: 1000px;
+ padding: 24px;
+ margin: 0 auto;
+ color: #1b1b1b;
+ font-family: 'Roboto', sans-serif;
+ font-size: 20px;
+ line-height: 28px;
+}
+
+h1{
+  text-align: center;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 38px;
+  line-height: 46px;
+}
+.IShop .header, .IShop .products{
+  width: 100%;
+  border: 1px solid #2b97da;
+}
+.IShop .products{
+  border-top: none;
+}
+.IShop .blue{
+  background: #e5f5ff;
+}
+.IShop .green{
+  background: #3af95d52;
+}
+.IShop .header{
+  border-bottom: none;
+}
+
+.IShop .header,
+.IShop .product{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+
+}
+.IShop .header{
+  background: #e3f2fc;
+}
+.IShop .header_title{
+  width: 20%;
+  padding: 16px;
+  font-size: 20px;
+  line-height: 28px;
+  border: 1px solid #2b97da;
+  text-align: center;
+  font-weight: 600;
+}
+.IShop .product_item, .IShop .price,
+.IShop .image, .IShop .count, .IShop .button{
+  width: 20%;
+  padding: 16px;
+  font-size: 18px;
+  line-height: 24px;
+  border: 1px solid #2b97da;
+  min-height: 100px;
+  text-align: center;
+
+}
+.IShop .image{
+ /* padding: 8px;*/
+  line-height: 1;
+}
+.IShop .button{
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+.IShop .button button{
+  text-transform: uppercase;
+  background: #db1f1f68;
+  font-weight: 400;
+  font-size: 14px;
+  padding: 5px;
+  padding-top: 6px;
+  border-radius: 3px;
+}
+.IShop .product_item{
+  text-align: left;
+}
+.IShop img{
+ max-width:100%;
+ border-radius: 3px;
+
+}
+/*# sourceMappingURL=bundle.css.map*/
