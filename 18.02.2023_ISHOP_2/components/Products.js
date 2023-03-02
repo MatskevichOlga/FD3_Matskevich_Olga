@@ -29,10 +29,10 @@ handleClick() {
   }));
 }*/
 
-state = {
-  selItemCode: null,
-  items:this.props.products,
-};
+/*state = {
+ selItemCode: null,
+ items:this.props.products,
+};*/
 
 productClicked=(EO)=>{
   //e.preveantDefault();

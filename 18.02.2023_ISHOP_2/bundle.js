@@ -31731,10 +31731,7 @@ var Products = function (_React$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Products.__proto__ || Object.getPrototypeOf(Products)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-      selItemCode: null,
-      items: _this.props.products
-    }, _this.productClicked = function (EO) {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Products.__proto__ || Object.getPrototypeOf(Products)).call.apply(_ref, [this].concat(args))), _this), _this.productClicked = function (EO) {
       //e.preveantDefault();
       _this.props.cbSelectRow(_this.props.code);
     }, _this.deleteRow = function (EO) {
@@ -31758,6 +31755,11 @@ var Products = function (_React$Component) {
       isToggleOn: !prevState.isToggleOn
     }));
   }*/
+
+  /*state = {
+   selItemCode: null,
+   items:this.props.products,
+  };*/
 
   _createClass(Products, [{
     key: 'render',
