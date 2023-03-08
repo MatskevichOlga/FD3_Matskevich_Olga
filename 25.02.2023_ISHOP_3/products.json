@@ -1,0 +1,8 @@
+[ 
+
+    {"name":"Mercedes-Benz GL-Класс","code":11,"id":1,"price":128700,"image":"https://stock-service.atlantm.by/uploads/cars-amp/9v/uc/9VucdCIoWO_1000_550.webp" ,"count":8}, 
+    {"name":"Land Rover Range Rover Velar","code":12,"id":2,"price":170269,"image":"https://stock-service.atlantm.by/uploads/cars-amp/0w/na/0wNaSV7tvv_1000_550.webp" ,"count":5}, 
+    {"name":"Toyota Land Cruiser","code":13,"id":3,"price":229437,"image":"https://stock-service.atlantm.by/uploads/cars-amp/hp/av/HPAVWT9PdQ_1000_550.webp" ,"count":4}, 
+    {"name":"Jaguar I-Pace","code":14,"id":4,"price":204876,"image":"https://stock-service.atlantm.by/uploads/cars-amp/xr/zk/xRzKIKvLRg_1000_550.webp" ,"count":2}
+
+]
