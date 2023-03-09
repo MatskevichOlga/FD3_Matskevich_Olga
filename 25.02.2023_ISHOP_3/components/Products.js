@@ -36,10 +36,10 @@ deleteRow=(EO)=>{
 }
 
 editRow=(EO)=>{
-  const isOkEdit=window.confirm("Вы действительно хотите редактировать товар?");
-  if(isOkEdit){
+/*  const isOkEdit=window.confirm("Вы действительно хотите редактировать товар?");
+  if(isOkEdit)*/
     this.props.cbEditRow(this.props.code);
-  }
+  
 
 }
 

@@ -30547,6 +30547,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(1);
@@ -30573,6 +30575,8 @@ var _FormEdit2 = _interopRequireDefault(_FormEdit);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -30597,30 +30601,45 @@ var Shop = function (_React$Component) {
       selItemCode: null,
       items: _this.props.products,
       prodItemCode: null,
-      isEditMode: false
+      isEditMode: false,
+      cardMode: 0 // 0 - нет, 1 - просмотр, 2 - редактирование, 3 - добавление
+    }, _this.save = function (code, newProps) {
+      var items = [].concat(_toConsumableArray(_this.state.items));
+      var itemIndex = items.findIndex(function (products) {
+        return products.code === code;
+      });
+      if (itemIndex === -1) {
+        return;
+      }
+      var newItem = _extends({}, items[itemIndex]);
+      newItem.name = newProps.name;
+      newItem.price = newProps.price;
+      newItem.count = newProps.count;
+      items[itemIndex] = newItem;
+      _this.setState({ items: items });
     }, _this.cbSelectRow = function (code) {
-      //callback выбора строки
       _this.setState({ selItemCode: code });
     }, _this.cbDeleteRow = function (code) {
-      //callback удаления строки 
       _this.setState({ items: _this.state.items.filter(function (s) {
           return s.code !== code;
         }) });
     }, _this.cbEditRow = function (code) {
-      //callback добавления формы строки
       _this.setState({ prodItemCode: code });
+    }, _this.editProduct = function (product) {
+      _this.setState({ editProduct: product });
     }, _temp), _possibleConstructorReturn(_this, _ret);
   }
+
+  //callback выбора строки
+
+  //callback удаления строки 
+
+  //callback добавления формы строки
+
 
   _createClass(Shop, [{
     key: 'render',
 
-    /*
-      editProduct = (product) => {
-        this.setState({ editProduct: product })
-    }
-     
-    */
 
     //key={v.id}
     value: function render() {
@@ -30645,6 +30664,7 @@ var Shop = function (_React$Component) {
 
         });
       });
+      //this.props.selItemCode&&
       var infoCode = this.state.items.map(function (v) {
         return _react2.default.createElement(_InfoCard2.default, { key: v.code, name: v.name, count: v.count,
           image: v.image, price: v.price, code: v.code,
@@ -30652,8 +30672,10 @@ var Shop = function (_React$Component) {
 
         });
       });
+
+      //this.state.cardMode===2&&this.props.selItemCode&&
       var formEditCode = this.state.items.map(function (v) {
-        return _react2.default.createElement(_FormEdit2.default, { key: v.code, name: v.name, count: v.count,
+        return _react2.default.createElement(_FormEdit2.default, { cbSave: _this2.save, key: _this2.props.selItemCode, name: v.name, count: v.count,
           image: v.image, price: v.price, code: v.code,
           prodItemCode: _this2.state.prodItemCode,
           cbChangeName: _this2.onChangeName,
@@ -31968,7 +31990,7 @@ exports.default = InfoCard;
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -31992,134 +32014,163 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var FormEdit = function (_React$Component) {
-    _inherits(FormEdit, _React$Component);
+  _inherits(FormEdit, _React$Component);
 
-    function FormEdit() {
-        var _ref;
+  function FormEdit() {
+    var _ref;
 
-        var _temp, _this, _ret;
+    var _temp, _this, _ret;
 
-        _classCallCheck(this, FormEdit);
+    _classCallCheck(this, FormEdit);
 
-        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-            args[_key] = arguments[_key];
-        }
-
-        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = FormEdit.__proto__ || Object.getPrototypeOf(FormEdit)).call.apply(_ref, [this].concat(args))), _this), _this.onChangeName = function (EO) {
-            _this.props.cbChangeName(EO.target.value);
-        }, _this.onChangePrice = function (EO) {
-            _this.props.cbChangePrice(EO.target.value);
-        }, _this.onChangeCount = function (EO) {
-            _this.props.cbChangeCount(EO.target.value);
-        }, _this.editRow = function (EO) {
-            var isOkEdit = window.confirm("Вы действительно хотите редактировать товар?");
-            if (isOkEdit) {
-                _this.props.cbEditRow(_this.props.code);
-            }
-        }, _temp), _possibleConstructorReturn(_this, _ret);
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
     }
 
-    _createClass(FormEdit, [{
-        key: 'render',
-        value: function render() {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = FormEdit.__proto__ || Object.getPrototypeOf(FormEdit)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+      currName: _this.props.name,
+      currPrice: _this.props.price,
+      currCount: _this.props.count,
+      nameError: "",
+      priceError: "",
+      countError: "",
+      valid: true,
+      cardMode: 0
+    }, _this.validate = function () {
+      var nameError = "",
+          priceError = "",
+          countError = "",
+          valid = void 0;
+      if (_this.state.currName.length < 3) nameError = "Введите большее количество символов";
 
-            return _react2.default.createElement(
-                'form',
-                { className: this.props.prodItemCode === this.props.code ? "visible edit" : "edit" },
-                _react2.default.createElement(
-                    'h3',
-                    null,
-                    '\u0420\u0435\u0434\u0430\u043A\u0442\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435 \u0442\u043E\u0432\u0430\u0440\u0430 ' + this.props.name
-                ),
-                _react2.default.createElement(
-                    'div',
-                    null,
-                    _react2.default.createElement(
-                        'span',
-                        null,
-                        '\u041D\u0430\u0438\u043C\u0435\u043D\u043E\u0432\u0430\u043D\u0438\u0435: '
-                    ),
-                    _react2.default.createElement('input', { defaultValue: this.props.name,
-                        type: 'text',
-                        name: 'name',
-                        onChange: this.onChangeName
+      if (isNaN(_this.state.currPrice)) priceError = "Введите стоимость";
 
-                    }),
-                    !this.props.name && _react2.default.createElement(
-                        'span',
-                        { style: { color: 'red' } },
-                        '\u0417\u0430\u043F\u043E\u043B\u043D\u0438\u0442\u0435 \u043A\u043E\u0440\u0440\u0435\u043A\u0442\u043D\u043E \u043F\u043E\u043B\u0435'
-                    )
-                ),
-                _react2.default.createElement(
-                    'div',
-                    null,
-                    _react2.default.createElement(
-                        'span',
-                        null,
-                        '\u0421\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C: '
-                    ),
-                    _react2.default.createElement('input', {
-                        defaultValue: this.props.price,
-                        type: 'number',
-                        name: 'price',
-                        onChange: this.onChangePrice
+      if (isNaN(_this.state.currCount)) countError = "Введите количество";
 
-                    }),
-                    !this.props.price && _react2.default.createElement(
-                        'span',
-                        { style: { color: 'red' } },
-                        '\u0417\u0430\u043F\u043E\u043B\u043D\u0438\u0442\u0435 \u043A\u043E\u0440\u0440\u0435\u043A\u0442\u043D\u043E \u043F\u043E\u043B\u0435'
-                    )
-                ),
-                _react2.default.createElement(
-                    'div',
-                    null,
-                    _react2.default.createElement(
-                        'span',
-                        null,
-                        '\u041A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E: '
-                    ),
-                    _react2.default.createElement('input', {
-                        defaultValue: this.props.count,
-                        type: 'number',
-                        name: 'count',
-                        onChange: this.onChangeCount
+      valid = !nameError && !priceError && !countError;
+      _this.setState({ nameError: nameError, priceError: priceError, countError: countError, valid: valid });
+    }, _this.changeName = function (EO) {
+      _this.setState({ currName: EO.target.value }, _this.validate);
+    }, _this.changePrice = function (EO) {
+      _this.setState({ currPrice: parseInt(EO.target.value) }, _this.validate);
+    }, _this.changeCount = function (EO) {
+      _this.setState({ currCount: parseInt(EO.target.value) }, _this.validate);
+    }, _this.save = function (EO) {
+      _this.props.cbSave(_this.props.code, { name: _this.state.currName, price: _this.state.currPrice, count: _this.state.currCount });
+    }, _this.cancel = function (EO) {
+      _this.props.cbCancel(_this.props.selItemCode === !_this.props.code);
+    }, _temp), _possibleConstructorReturn(_this, _ret);
+  }
 
-                    }),
-                    !this.props.count && _react2.default.createElement(
-                        'span',
-                        { style: { color: 'red' } },
-                        '\u0417\u0430\u043F\u043E\u043B\u043D\u0438\u0442\u0435 \u043A\u043E\u0440\u0440\u0435\u043A\u0442\u043D\u043E \u043F\u043E\u043B\u0435'
-                    )
-                ),
-                _react2.default.createElement('input', {
-                    type: 'button',
-                    onClick: this.save,
-                    value: '\u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C',
-                    disabled: !this.props.name | !this.props.price | !this.props.count
-                }),
-                _react2.default.createElement('input', { type: 'button', onClick: this.cancel, value: '\u041E\u0442\u043C\u0435\u043D\u0430' })
-            );
-        }
-    }]);
+  /* editRow=(EO)=>{
+     const isOkEdit=window.confirm("Вы действительно хотите редактировать товар?");
+     if(isOkEdit){
+       this.props.cbEditRow(this.props.code);
+     }
+   
+   }*/
 
-    return FormEdit;
+  _createClass(FormEdit, [{
+    key: 'render',
+    value: function render() {
+
+      return _react2.default.createElement(
+        'form',
+        { className: this.props.prodItemCode === this.props.code ? "visible edit" : "edit" },
+        _react2.default.createElement(
+          'h3',
+          null,
+          '\u0420\u0435\u0434\u0430\u043A\u0442\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435 \u0442\u043E\u0432\u0430\u0440\u0430 ' + this.props.name
+        ),
+        _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement(
+            'span',
+            null,
+            '\u041D\u0430\u0438\u043C\u0435\u043D\u043E\u0432\u0430\u043D\u0438\u0435: '
+          ),
+          _react2.default.createElement('input', { value: this.state.currName,
+            type: 'text',
+            name: 'name',
+            onChange: this.changeName
+
+          }),
+          _react2.default.createElement(
+            'span',
+            { style: { color: 'red' } },
+            this.state.nameError
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement(
+            'span',
+            null,
+            '\u0421\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C: '
+          ),
+          _react2.default.createElement('input', {
+            value: this.state.currPrice,
+            type: 'number',
+            name: 'price',
+            onChange: this.changePrice
+
+          }),
+          _react2.default.createElement(
+            'span',
+            { style: { color: 'red' } },
+            this.state.priceError
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement(
+            'span',
+            null,
+            '\u041A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E: '
+          ),
+          _react2.default.createElement('input', {
+            value: this.state.currCount,
+            type: 'number',
+            name: 'count',
+            onChange: this.changeCount
+
+          }),
+          _react2.default.createElement(
+            'span',
+            { style: { color: 'red' } },
+            this.state.countError
+          )
+        ),
+        _react2.default.createElement('input', {
+          type: 'button',
+          onClick: this.save,
+          value: '\u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C',
+          disabled: !this.state.valid
+        }),
+        _react2.default.createElement('input', { type: 'button', onClick: this.cancel, value: '\u041E\u0442\u043C\u0435\u043D\u0430' })
+      );
+    }
+  }]);
+
+  return FormEdit;
 }(_react2.default.Component);
 
 FormEdit.propTypes = {
 
-    code: _propTypes2.default.number.isRequired,
-    //id: PropTypes.number.isRequired,
-    count: _propTypes2.default.number.isRequired,
-    name: _propTypes2.default.string.isRequired,
-    price: _propTypes2.default.number.isRequired,
-    selItemCode: _propTypes2.default.number,
-    image: _propTypes2.default.string.isRequired,
-    cbChangeName: _propTypes2.default.func.isRequired,
-    cbChangePrice: _propTypes2.default.func.isRequired,
-    cbChangeCount: _propTypes2.default.func.isRequired,
-    cbEditRow: _propTypes2.default.func.isRequired
+  code: _propTypes2.default.number.isRequired,
+  //id: PropTypes.number.isRequired,
+  count: _propTypes2.default.number.isRequired,
+  name: _propTypes2.default.string.isRequired,
+  price: _propTypes2.default.number.isRequired,
+  selItemCode: _propTypes2.default.number,
+  image: _propTypes2.default.string.isRequired,
+  cbChangeName: _propTypes2.default.func.isRequired,
+  cbChangePrice: _propTypes2.default.func.isRequired,
+  cbChangeCount: _propTypes2.default.func.isRequired,
+  cbEditRow: _propTypes2.default.func.isRequired
 
 };
 exports.default = FormEdit;

@@ -20,23 +20,59 @@ class FormEdit extends React.Component {
 
   };
 
-  onChangeName = (EO) => { 
-    this.props.cbChangeName(EO.target.value);
-  };
-  onChangePrice = (EO) => { 
-    this.props.cbChangePrice(EO.target.value);
+  state = {
+  currName:this.props.name,
+  currPrice:this.props.price,
+  currCount:this.props.count,
+  nameError: "",
+  priceError: "",
+  countError: "",
+  valid: true,
+  cardMode: 0 
   };
 
-  onChangeCount = (EO) => { 
-    this.props.cbChangeCount(EO.target.value);
+  validate = () => {
+    let nameError="", priceError="", countError="", valid ;
+    if(this.state.currName.length<3)
+      nameError="Введите большее количество символов";
+    
+
+    if(isNaN(this.state.currPrice))
+      priceError= "Введите стоимость";
+    
+    if(isNaN(this.state.currCount))
+      countError= "Введите количество";
+    
+    valid=(!nameError)&&(!priceError)&&(!countError);
+    this.setState({nameError,priceError,countError,valid});
+  
+
   };
 
-  editRow=(EO)=>{
+  changeName = (EO) => { 
+    this.setState({currName:EO.target.value}, this.validate);
+  };
+  changePrice = (EO) => { 
+    this.setState({currPrice:parseInt(EO.target.value)}, this.validate);
+  };
+
+  changeCount = (EO) => { 
+    this.setState({currCount:parseInt(EO.target.value)}, this.validate);
+  };
+
+ /* editRow=(EO)=>{
     const isOkEdit=window.confirm("Вы действительно хотите редактировать товар?");
     if(isOkEdit){
       this.props.cbEditRow(this.props.code);
     }
   
+  }*/
+
+  save = (EO) => {
+    this.props.cbSave(this.props.code,{name:this.state.currName, price:this.state.currPrice, count:this.state.currCount});
+  } 
+  cancel = (EO) => {
+    this.props.cbCancel(this.props.selItemCode===!this.props.code);
   }
 
   
@@ -51,44 +87,44 @@ class FormEdit extends React.Component {
 
     <div>
         <span>Наименование: </span>
-        <input defaultValue={this.props.name}
+        <input value={this.state.currName}
             type="text"
             name="name"
-            onChange={this.onChangeName}
+            onChange={this.changeName}
 
         />
-        {!this.props.name && <span style={{ color: 'red' }}>Заполните корректно поле</span>}
+        {<span style={{ color: 'red' }}>{this.state.nameError}</span>}
     </div>
 
     <div>
         <span>Стоимость: </span>
         <input
-            defaultValue={this.props.price}
+            value={this.state.currPrice}
             type="number"
             name="price"
-            onChange={this.onChangePrice}
+            onChange={this.changePrice}
 
         />
-        {!this.props.price && <span style={{ color: 'red' }}>Заполните корректно поле</span>}
+        {<span style={{ color: 'red' }}>{this.state.priceError}</span>}
     </div>
 
     <div>
         <span>Количество: </span>
         <input
-            defaultValue={this.props.count}
+            value={this.state.currCount}
             type="number"
             name="count"
-            onChange={this.onChangeCount}
+            onChange={this.changeCount}
 
         />
-        {!this.props.count && <span style={{ color: 'red' }}>Заполните корректно поле</span>}
+        {<span style={{ color: 'red' }}>{this.state.countError}</span>}
     </div>
     
     <input
         type="button"
         onClick={this.save}
         value="Сохранить"
-        disabled={!this.props.name | !this.props.price | !this.props.count}
+        disabled={!this.state.valid}
     />
     <input type="button" onClick={this.cancel} value="Отмена" />
 </form>

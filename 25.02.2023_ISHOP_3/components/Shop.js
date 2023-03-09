@@ -36,25 +36,43 @@ class Shop extends React.Component {
     items:this.props.products,
     prodItemCode:null,
     isEditMode: false,
+    cardMode: 0     // 0 - нет, 1 - просмотр, 2 - редактирование, 3 - добавление
   };
 
+  save = (code, newProps) => {
+    let items=[...this.state.items];
+    let itemIndex=items.findIndex(products => products.code===code);
+    if(itemIndex===-1){
+      return;
+    }
+    let newItem={...items[itemIndex]};
+    newItem.name=newProps.name;
+    newItem.price=newProps.price;
+    newItem.count=newProps.count;
+    items[itemIndex]=newItem;
+    this.setState({items});
 
-  cbSelectRow = (code) => {     //callback выбора строки
+
+  }
+
+   //callback выбора строки
+  cbSelectRow = (code) => {  
     this.setState( {selItemCode:code} );
   }
-  cbDeleteRow = (code) => {     //callback удаления строки 
+   //callback удаления строки 
+  cbDeleteRow = (code) => {    
     this.setState( {items:this.state.items.filter(s=>s.code!==code)} );
   }
-
-  cbEditRow = (code) => { //callback добавления формы строки
+//callback добавления формы строки
+  cbEditRow = (code) => { 
     this.setState( {prodItemCode:code} );
   }
-/*
+
   editProduct = (product) => {
     this.setState({ editProduct: product })
 }
  
-*/
+
 
 //key={v.id}
   render() {
@@ -73,6 +91,7 @@ class Shop extends React.Component {
 
       />
     )
+    //this.props.selItemCode&&
       const infoCode=this.state.items.map( v =>
         <InfoCard  key={v.code} name={v.name} count={v.count}
         image={v.image} price={v.price} code={v.code}
@@ -81,8 +100,10 @@ class Shop extends React.Component {
   
         />
       )
+
+      //this.state.cardMode===2&&this.props.selItemCode&&
         const formEditCode=this.state.items.map( v =>
-          <FormEdit  key={v.code} name={v.name} count={v.count}
+          <FormEdit  cbSave={this.save} key={this.props.selItemCode} name={v.name} count={v.count}
           image={v.image} price={v.price} code={v.code}
           prodItemCode={this.state.prodItemCode}
           cbChangeName={this.onChangeName}
