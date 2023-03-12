@@ -13,16 +13,24 @@ class InfoCard extends React.Component {
     price: PropTypes.number.isRequired,
     selItemCode:PropTypes.number,
     image:PropTypes.string.isRequired,
+  //  cardMode:PropTypes.number.isRequired,
 
 
   };
 
+  state = {
+   selItemCode: null,
+    cardMode: 0     // 0 - нет, 1 - просмотр, 2 - редактирование, 3 - добавление
+  };
 
+
+/*    <div className={(this.props.selItemCode===this.props.code)?"visible infoCard":"infoCard"}>*/
+//&&(this.props.cardMode==1)
   render() {
 
   return (
 
-    <div className={(this.props.selItemCode===this.props.code)?"visible infoCard":"infoCard"}>
+      <div className={((this.props.selItemCode===this.props.code))?"visible infoCard":"infoCard"}>
         <h3>Информация</h3>
           <img src={this.props.image} alt="image"/>
         <div>

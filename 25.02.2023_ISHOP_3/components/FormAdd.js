@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import './Form.css';
 
-class FormEdit extends React.Component {
+class FormAdd extends React.Component {
   static propTypes = {
 
         code: PropTypes.number.isRequired,
@@ -12,7 +12,7 @@ class FormEdit extends React.Component {
         name: PropTypes.string.isRequired,
         price: PropTypes.number.isRequired,
         selItemCode:PropTypes.number,
-        image:PropTypes.string.isRequired,
+      //  image:PropTypes.string.isRequired,
   /*      cbChangeName:PropTypes.func.isRequired,
         cbChangePrice:PropTypes.func.isRequired,
         cbChangeCount:PropTypes.func.isRequired,
@@ -22,9 +22,9 @@ class FormEdit extends React.Component {
   };
 
   state = {
-  currName:this.props.name,
-  currPrice:this.props.price,
-  currCount:this.props.count,
+  addName:this.props.name,
+  addPrice:this.props.price,
+  addCount:this.props.count,
   nameError: "",
   priceError: "",
   countError: "",
@@ -34,14 +34,14 @@ class FormEdit extends React.Component {
 
   validate = () => {
     let nameError="", priceError="", countError="", valid ;
-    if(this.state.currName.length<3)
+    if(this.state.addName.length<3)
       nameError="Введите большее количество символов";
     
 
-    if(isNaN(this.state.currPrice))
+    if(isNaN(this.state.addPrice))
       priceError= "Введите стоимость";
     
-    if(isNaN(this.state.currCount))
+    if(isNaN(this.state.addCount))
       countError= "Введите количество";
     
     valid=(!nameError)&&(!priceError)&&(!countError);
@@ -50,15 +50,15 @@ class FormEdit extends React.Component {
 
   };
 
-  changeName = (EO) => { 
-    this.setState({currName:EO.target.value}, this.validate);
+  newName = (EO) => { 
+    this.setState({addName:EO.target.value}, this.validate);
   };
-  changePrice = (EO) => { 
-    this.setState({currPrice:parseInt(EO.target.value)}, this.validate);
+  newPrice = (EO) => { 
+    this.setState({addPrice:parseInt(EO.target.value)}, this.validate);
   };
 
-  changeCount = (EO) => { 
-    this.setState({currCount:parseInt(EO.target.value)}, this.validate);
+  newCount = (EO) => { 
+    this.setState({addCount:parseInt(EO.target.value)}, this.validate);
   };
 
  /* editRow=(EO)=>{
@@ -70,7 +70,7 @@ class FormEdit extends React.Component {
   }*/
 
   save = (EO) => {
-    this.props.cbSave(this.props.code,{name:this.state.currName, price:this.state.currPrice, count:this.state.currCount});
+    this.props.cbSave(this.props.code,{name:this.state.addName, price:this.state.addPrice, count:this.state.addCount});
 
   } 
  cancel = (EO) => {
@@ -85,15 +85,15 @@ class FormEdit extends React.Component {
   render() {
 
   return (
-    <form className={(this.props.prodItemCode===this.props.code)?"visible edit":"edit"}>
-    <h3>{`Редактирование товара ${this.props.name}`}</h3>
+    <form className="visible edit">
+    <h3>Добавление нового товара</h3>
 
     <div>
         <span>Наименование: </span>
-        <input value={this.state.currName}
+        <input value={this.state.addName}
             type="text"
             name="name"
-            onChange={this.changeName}
+            onChange={this.newName}
 
         />
         {<span style={{ color: 'red' }}> {this.state.nameError}</span>}
@@ -102,10 +102,10 @@ class FormEdit extends React.Component {
     <div>
         <span>Стоимость: </span>
         <input
-            value={this.state.currPrice}
+            value={this.state.addPrice}
             type="number"
             name="price"
-            onChange={this.changePrice}
+            onChange={this.newPrice}
 
         />
         {<span style={{ color: 'red' }}> {this.state.priceError}</span>}
@@ -114,10 +114,10 @@ class FormEdit extends React.Component {
     <div>
         <span>Количество: </span>
         <input
-            value={this.state.currCount}
+            value={this.state.addCount}
             type="number"
             name="count"
-            onChange={this.changeCount}
+            onChange={this.newCount}
 
         />
         {<span style={{ color: 'red' }}> {this.state.countError}</span>}
@@ -138,5 +138,5 @@ class FormEdit extends React.Component {
 
 
 }
-export default FormEdit;
+export default FormAdd;
 

@@ -17,11 +17,12 @@ h1{
   font-size: 28px;
   line-height: 38px;
 }
-.list{
+.word_list{
   border: 2px solid #0ecacd;
   width: 250px;
   padding-left: 10px;
   height: 180px;
   overflow-y: auto;
-  margin: 32px auto;
+  margin: 32px 0;
 }
+/*# sourceMappingURL=bundle.css.map*/

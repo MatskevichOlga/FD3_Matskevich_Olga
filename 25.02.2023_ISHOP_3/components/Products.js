@@ -11,6 +11,7 @@ class Products extends React.Component {
     name: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
     selItemCode:PropTypes.number,
+    cardMode:PropTypes.number,
     cbSelectRow:PropTypes.func.isRequired,
     cbDeleteRow:PropTypes.func.isRequired,
     cbEditRow:PropTypes.func.isRequired,

@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 9);
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -258,21 +258,6 @@ process.umask = function() { return 0; };
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
-
-if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(10);
-} else {
-  module.exports = __webpack_require__(11);
-}
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
 /*
 object-assign
 (c) Sindre Sorhus
@@ -366,33 +351,22 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 
 
 /***/ }),
-/* 3 */
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(process) {/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
 
-if (process.env.NODE_ENV !== 'production') {
-  var ReactIs = __webpack_require__(6);
-
-  // By explicitly using `prop-types` you are opting into new development behavior.
-  // http://fb.me/prop-types-in-prod
-  var throwOnDirectAccess = true;
-  module.exports = __webpack_require__(23)(ReactIs.isElement, throwOnDirectAccess);
+if (process.env.NODE_ENV === 'production') {
+  module.exports = __webpack_require__(8);
 } else {
-  // By explicitly using `prop-types` you are opting into new production behavior.
-  // http://fb.me/prop-types-in-prod
-  module.exports = __webpack_require__(25)();
+  module.exports = __webpack_require__(9);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 4 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -411,6 +385,21 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+if (process.env.NODE_ENV === 'production') {
+  module.exports = __webpack_require__(12);
+} else {
+  module.exports = __webpack_require__(13);
+}
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
 /* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -418,74 +407,51 @@ module.exports = ReactPropTypesSecret;
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(14);
+  module.exports = __webpack_require__(20);
 } else {
-  module.exports = __webpack_require__(15);
+  module.exports = __webpack_require__(21);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
 /* 6 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
-
-if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(21);
-} else {
-  module.exports = __webpack_require__(22);
-}
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
-
-/***/ }),
-/* 7 */
 /***/ (function(module, exports) {
 
 module.exports = Function.call.bind(Object.prototype.hasOwnProperty);
 
 
 /***/ }),
-/* 8 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 9 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _react = __webpack_require__(1);
+var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(12);
+var _reactDom = __webpack_require__(10);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _Shop = __webpack_require__(20);
+var _FilterNew = __webpack_require__(18);
 
-var _Shop2 = _interopRequireDefault(_Shop);
+var _FilterNew2 = _interopRequireDefault(_FilterNew);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var titleText = 'Наличие авто на складе "Атлант-Н"';
-var productsArr = __webpack_require__(33);
-var headerArr = [{ text: 'Наименование', code: 1 }, { text: 'Стоимость', code: 2 }, { text: 'Изображение', code: 3 }, { text: 'Остаток на складе', code: 4 }, { text: 'Удалить', code: 5 }];
+var titleText = 'Сортировка списка';
+var wordsArr = __webpack_require__(26);
 
-_reactDom2.default.render(_react2.default.createElement(_Shop2.default, {
+_reactDom2.default.render(_react2.default.createElement(_FilterNew2.default, {
   title: titleText,
-  header: headerArr,
-  products: productsArr
+  words: wordsArr
 }), document.getElementById('container'));
 
 /***/ }),
-/* 10 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -497,7 +463,7 @@ _reactDom2.default.render(_react2.default.createElement(_Shop2.default, {
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-var l=__webpack_require__(2),n=60103,p=60106;exports.Fragment=60107;exports.StrictMode=60108;exports.Profiler=60114;var q=60109,r=60110,t=60112;exports.Suspense=60113;var u=60115,v=60116;
+var l=__webpack_require__(1),n=60103,p=60106;exports.Fragment=60107;exports.StrictMode=60108;exports.Profiler=60114;var q=60109,r=60110,t=60112;exports.Suspense=60113;var u=60115,v=60116;
 if("function"===typeof Symbol&&Symbol.for){var w=Symbol.for;n=w("react.element");p=w("react.portal");exports.Fragment=w("react.fragment");exports.StrictMode=w("react.strict_mode");exports.Profiler=w("react.profiler");q=w("react.provider");r=w("react.context");t=w("react.forward_ref");exports.Suspense=w("react.suspense");u=w("react.memo");v=w("react.lazy")}var x="function"===typeof Symbol&&Symbol.iterator;
 function y(a){if(null===a||"object"!==typeof a)return null;a=x&&a[x]||a["@@iterator"];return"function"===typeof a?a:null}function z(a){for(var b="https://reactjs.org/docs/error-decoder.html?invariant="+a,c=1;c<arguments.length;c++)b+="&args[]="+encodeURIComponent(arguments[c]);return"Minified React error #"+a+"; visit "+b+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings."}
 var A={isMounted:function(){return!1},enqueueForceUpdate:function(){},enqueueReplaceState:function(){},enqueueSetState:function(){}},B={};function C(a,b,c){this.props=a;this.context=b;this.refs=B;this.updater=c||A}C.prototype.isReactComponent={};C.prototype.setState=function(a,b){if("object"!==typeof a&&"function"!==typeof a&&null!=a)throw Error(z(85));this.updater.enqueueSetState(this,a,b,"setState")};C.prototype.forceUpdate=function(a){this.updater.enqueueForceUpdate(this,a,"forceUpdate")};
@@ -515,7 +481,7 @@ exports.useLayoutEffect=function(a,b){return S().useLayoutEffect(a,b)};exports.u
 
 
 /***/ }),
-/* 11 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -534,7 +500,7 @@ if (process.env.NODE_ENV !== "production") {
   (function() {
 'use strict';
 
-var _assign = __webpack_require__(2);
+var _assign = __webpack_require__(1);
 
 // TODO: this is special because it gets imported during build.
 var ReactVersion = '17.0.2';
@@ -2856,7 +2822,7 @@ exports.version = ReactVersion;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 12 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2894,15 +2860,15 @@ if (process.env.NODE_ENV === 'production') {
   // DCE check should happen before ReactDOM bundle executes so that
   // DevTools can report bad minification during injection.
   checkDCE();
-  module.exports = __webpack_require__(13);
+  module.exports = __webpack_require__(11);
 } else {
-  module.exports = __webpack_require__(16);
+  module.exports = __webpack_require__(14);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 13 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2917,7 +2883,7 @@ if (process.env.NODE_ENV === 'production') {
 /*
  Modernizr 3.0.0pre (Custom Build) | MIT
 */
-var aa=__webpack_require__(1),m=__webpack_require__(2),r=__webpack_require__(5);function y(a){for(var b="https://reactjs.org/docs/error-decoder.html?invariant="+a,c=1;c<arguments.length;c++)b+="&args[]="+encodeURIComponent(arguments[c]);return"Minified React error #"+a+"; visit "+b+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings."}if(!aa)throw Error(y(227));var ba=new Set,ca={};function da(a,b){ea(a,b);ea(a+"Capture",b)}
+var aa=__webpack_require__(2),m=__webpack_require__(1),r=__webpack_require__(4);function y(a){for(var b="https://reactjs.org/docs/error-decoder.html?invariant="+a,c=1;c<arguments.length;c++)b+="&args[]="+encodeURIComponent(arguments[c]);return"Minified React error #"+a+"; visit "+b+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings."}if(!aa)throw Error(y(227));var ba=new Set,ca={};function da(a,b){ea(a,b);ea(a+"Capture",b)}
 function ea(a,b){ca[a]=b;for(a=0;a<b.length;a++)ba.add(b[a])}
 var fa=!("undefined"===typeof window||"undefined"===typeof window.document||"undefined"===typeof window.document.createElement),ha=/^[:A-Z_a-z\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u02FF\u0370-\u037D\u037F-\u1FFF\u200C-\u200D\u2070-\u218F\u2C00-\u2FEF\u3001-\uD7FF\uF900-\uFDCF\uFDF0-\uFFFD][:A-Z_a-z\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u02FF\u0370-\u037D\u037F-\u1FFF\u200C-\u200D\u2070-\u218F\u2C00-\u2FEF\u3001-\uD7FF\uF900-\uFDCF\uFDF0-\uFFFD\-.0-9\u00B7\u0300-\u036F\u203F-\u2040]*$/,ia=Object.prototype.hasOwnProperty,
 ja={},ka={};function la(a){if(ia.call(ka,a))return!0;if(ia.call(ja,a))return!1;if(ha.test(a))return ka[a]=!0;ja[a]=!0;return!1}function ma(a,b,c,d){if(null!==c&&0===c.type)return!1;switch(typeof b){case "function":case "symbol":return!0;case "boolean":if(d)return!1;if(null!==c)return!c.acceptsBooleans;a=a.toLowerCase().slice(0,5);return"data-"!==a&&"aria-"!==a;default:return!1}}
@@ -3206,7 +3172,7 @@ exports.unstable_renderSubtreeIntoContainer=function(a,b,c,d){if(!rk(c))throw Er
 
 
 /***/ }),
-/* 14 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3233,7 +3199,7 @@ exports.unstable_wrapCallback=function(a){var b=P;return function(){var c=P;P=b;
 
 
 /***/ }),
-/* 15 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3887,7 +3853,7 @@ exports.unstable_wrapCallback = unstable_wrapCallback;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 16 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3906,10 +3872,10 @@ if (process.env.NODE_ENV !== "production") {
   (function() {
 'use strict';
 
-var React = __webpack_require__(1);
-var _assign = __webpack_require__(2);
-var Scheduler = __webpack_require__(5);
-var tracing = __webpack_require__(17);
+var React = __webpack_require__(2);
+var _assign = __webpack_require__(1);
+var Scheduler = __webpack_require__(4);
+var tracing = __webpack_require__(15);
 
 var ReactSharedInternals = React.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
 
@@ -30157,22 +30123,22 @@ exports.version = ReactVersion;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 17 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(18);
+  module.exports = __webpack_require__(16);
 } else {
-  module.exports = __webpack_require__(19);
+  module.exports = __webpack_require__(17);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 18 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30188,7 +30154,7 @@ var b=0;exports.__interactionsRef=null;exports.__subscriberRef=null;exports.unst
 
 
 /***/ }),
-/* 19 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30543,7 +30509,7 @@ exports.unstable_wrap = unstable_wrap;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 20 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30553,39 +30519,19 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(1);
+var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(3);
+var _propTypes = __webpack_require__(19);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-__webpack_require__(26);
-
-var _Products = __webpack_require__(27);
-
-var _Products2 = _interopRequireDefault(_Products);
-
-var _InfoCard = __webpack_require__(29);
-
-var _InfoCard2 = _interopRequireDefault(_InfoCard);
-
-var _FormEdit = __webpack_require__(31);
-
-var _FormEdit2 = _interopRequireDefault(_FormEdit);
-
-var _FormAdd = __webpack_require__(32);
-
-var _FormAdd2 = _interopRequireDefault(_FormAdd);
+__webpack_require__(25);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -30593,199 +30539,123 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Shop = function (_React$Component) {
-  _inherits(Shop, _React$Component);
+var Filter = function (_React$Component) {
+  _inherits(Filter, _React$Component);
 
-  function Shop() {
+  function Filter() {
     var _ref;
 
     var _temp, _this, _ret;
 
-    _classCallCheck(this, Shop);
+    _classCallCheck(this, Filter);
 
     for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Shop.__proto__ || Object.getPrototypeOf(Shop)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-      selItemCode: null,
-      items: _this.props.products,
-      prodItemCode: null,
-      isEditMode: false,
-      cardMode: 0 // 0 - нет, 1 - просмотр, 2 - редактирование, 3 - добавление
-    }, _this.save = function (code, newProps) {
-      var items = [].concat(_toConsumableArray(_this.state.items));
-      var itemIndex = items.findIndex(function (products) {
-        return products.code === code;
-      });
-      if (itemIndex === -1) {
-        return;
-      }
-      var newItem = _extends({}, items[itemIndex]);
-      newItem.name = newProps.name;
-      newItem.price = newProps.price;
-      newItem.count = newProps.count;
-      items[itemIndex] = newItem;
-      _this.setState({ items: items });
-    }, _this.cbSelectRow = function (code) {
-      _this.setState({ selItemCode: code, cardMode: 1 });
-    }, _this.cbDeleteRow = function (code) {
-      _this.setState({ items: _this.state.items.filter(function (s) {
-          return s.code !== code;
-        }) });
-    }, _this.cbEditRow = function (code) {
-      _this.setState({ prodItemCode: code, cardMode: 2 });
-    }, _this.editProduct = function (product) {
-      _this.setState({ editProduct: product, cardMode: 3 });
-    }, _this.cbCancel = function (code) {
-      _this.setState({ prodItemCode: code, cardMode: 0 });
-    }, _this.add = function (EO) {
-      _this.setState({ cardMode: 3 });
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Filter.__proto__ || Object.getPrototypeOf(Filter)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+      isSort: false,
+      filterStr: '',
+      currWordList: _this.props.words
+    }, _this.filterChange = function (e) {
+      _this.setState({ filterStr: e.target.value }, _this.processList);
+    }, _this.sorting = function () {
+      _this.state.currWordList.sort();
+    }, _this.sortClicked = function (e) {
+      _this.setState({ isSort: e.target.checked }, _this.sorting);
+      // this.setState({isSort:!this.state.isSort},);
+    }, _this.reset = function (e) {
+      _this.setState({ isSort: false, filterStr: "" /*,currWordList:this.props.words*/ }, _this.processList);
+    }, _this.processList = function () {
+      var list = _this.props.words.slice();
+      if (_this.state.filterStr) {
+        list = list.filter(function (s) {
+          return s.text.includes(_this.state.filterStr);
+        });
+      };
+      if (_this.state.isSort === true)
+        //if(list===this.props.words)
+        //  list=list.slice();
+        list.sort();
+      _this.setState({ currWordList: list });
     }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
-  //callback выбора строки
-
-
-  //callback удаления строки 
-
-  //callback добавления формы для редактирования
-
-
-  _createClass(Shop, [{
+  _createClass(Filter, [{
     key: 'render',
-
-
-    //key={v.id}
     value: function render() {
-      var _this2 = this;
-
       var titleCode = this.props.title;
-      var headerCode = this.props.header.map(function (v) {
+
+      //this.state.currWordList.join("\n")
+      var currWordListCode = this.state.currWordList.map(function (v) {
         return _react2.default.createElement(
           'div',
-          { key: v.code, className: 'header_title' },
+          { key: v.text, className: 'list_item' },
           v.text
         );
       });
-      // key={v.code} 
-      var productsCode = this.state.items.map(function (v) {
-        return _react2.default.createElement(_Products2.default, { name: v.name, count: v.count,
-          image: v.image, price: v.price, code: v.code,
-          key: _this2.props.selItemCode,
-          selItemCode: _this2.state.selItemCode,
-          cbSelectRow: _this2.cbSelectRow,
-          cbDeleteRow: _this2.cbDeleteRow,
-          cbEditRow: _this2.cbEditRow,
-          editProduct: _this2.editProduct,
-          cbCancel: _this2.cancel
-
-        });
-      });
-      //this.props.selItemCode&&
-      // &&(this.props.cardMode===1)
-      // key={v.code}
-      var infoCode = this.state.items.map(function (v) {
-        return _react2.default.createElement(_InfoCard2.default, { name: v.name, count: v.count,
-          key: _this2.props.selItemCode,
-          image: v.image, price: v.price, code: v.code,
-          selItemCode: _this2.state.selItemCode,
-          cbSelectRow: _this2.cbSelectRow
-
-        });
-      });
-      /*    cbChangeName={this.onChangeName}
-                cbChangePrice={this.onChangePrice}
-                cbChangeCount={this.onChangeCount}*/
-      //this.state.cardMode===2&&this.props.selItemCode&&
-      var formEditCode = this.state.items.map(function (v) {
-        return _react2.default.createElement(_FormEdit2.default, { cbSave: _this2.save, key: _this2.props.selItemCode, name: v.name, count: v.count,
-          image: v.image, price: v.price, code: v.code,
-          prodItemCode: _this2.state.prodItemCode,
-          editProduct: _this2.editProduct,
-          cbCancel: _this2.cancel
-
-        });
-      });
-
-      // const formAddCode=this.state.items.map( v =>
-      /*   <FormAdd  cbSave={this.save} key={this.props.selItemCode} name={v.name} count={v.count}
-         image={v.image} price={v.price} code={v.code}
-         prodItemCode={this.state.prodItemCode}     
-         cbCancel={this.cancel}
-            />*/
-
-      //  )
-
 
       return _react2.default.createElement(
         'div',
-        { className: 'IShop' },
+        { className: 'filterBlock' },
         _react2.default.createElement(
-          'h1',
+          'h3',
           { className: 'title' },
           titleCode
         ),
+        _react2.default.createElement('input', { type: 'checkbox', checked: this.state.isSort, onChange: this.sortClicked }),
+        _react2.default.createElement('input', { type: 'text', value: this.state.filterStr, onChange: this.filterChange }),
+        _react2.default.createElement('input', { type: 'button', value: 'C\u0431\u0440\u043E\u0441', onClick: this.reset }),
         _react2.default.createElement(
           'div',
-          { className: 'header' },
-          headerCode
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'products' },
-          productsCode
-        ),
-        _react2.default.createElement('input', { type: 'button', onClick: this.add, value: '\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C' }),
-        this.state.cardMode == 3 && _react2.default.createElement(
-          'div',
-          { className: 'card' },
-          _react2.default.createElement(_FormAdd2.default, { cbSave: this.save, key: this.props.selItemCode, name: this.state.addName, count: this.state.addCount,
-            price: this.state.addPrice,
-            prodItemCode: this.state.prodItemCode,
-            cbCancel: this.cancel })
-        ),
-        this.state.cardMode == 1 && _react2.default.createElement(
-          'div',
-          { className: 'card' },
-          infoCode
-        ),
-
-        // (this.state.cardMode==2)&&
-        _react2.default.createElement(
-          'div',
-          { className: 'form' },
-          formEditCode
+          { className: 'word_list' },
+          currWordListCode
         )
       );
     }
   }]);
 
-  return Shop;
+  return Filter;
 }(_react2.default.Component);
 
-Shop.propTypes = {
-  //  defaultProducts:React.PropTypes.array.isRequired,
+Filter.propTypes = {
   title: _propTypes2.default.string.isRequired,
-  header: _propTypes2.default.arrayOf(_propTypes2.default.shape({
-    text: _propTypes2.default.string.isRequired
-  })),
-  products: _propTypes2.default.arrayOf(_propTypes2.default.shape({
+  words: _propTypes2.default.arrayOf(_propTypes2.default.shape({
     code: _propTypes2.default.number.isRequired,
-    //  id: PropTypes.number.isRequired,
-    count: _propTypes2.default.number.isRequired,
-    name: _propTypes2.default.string.isRequired,
-    price: _propTypes2.default.number.isRequired,
-    image: _propTypes2.default.string.isRequired
-
+    text: _propTypes2.default.string.isRequired
   }))
-  //  cbCancel:PropTypes.func.isRequired,
 
 };
-exports.default = Shop;
+exports.default = Filter;
 
 /***/ }),
-/* 21 */
+/* 19 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(process) {/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+if (process.env.NODE_ENV !== 'production') {
+  var ReactIs = __webpack_require__(5);
+
+  // By explicitly using `prop-types` you are opting into new development behavior.
+  // http://fb.me/prop-types-in-prod
+  var throwOnDirectAccess = true;
+  module.exports = __webpack_require__(22)(ReactIs.isElement, throwOnDirectAccess);
+} else {
+  // By explicitly using `prop-types` you are opting into new production behavior.
+  // http://fb.me/prop-types-in-prod
+  module.exports = __webpack_require__(24)();
+}
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30807,7 +30677,7 @@ exports.isValidElementType=function(a){return"string"===typeof a||"function"===t
 
 
 /***/ }),
-/* 22 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30996,7 +30866,7 @@ exports.typeOf = typeOf;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 23 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31009,12 +30879,12 @@ exports.typeOf = typeOf;
 
 
 
-var ReactIs = __webpack_require__(6);
-var assign = __webpack_require__(2);
+var ReactIs = __webpack_require__(5);
+var assign = __webpack_require__(1);
 
-var ReactPropTypesSecret = __webpack_require__(4);
-var has = __webpack_require__(7);
-var checkPropTypes = __webpack_require__(24);
+var ReactPropTypesSecret = __webpack_require__(3);
+var has = __webpack_require__(6);
+var checkPropTypes = __webpack_require__(23);
 
 var printWarning = function() {};
 
@@ -31614,7 +31484,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 24 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31630,9 +31500,9 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 var printWarning = function() {};
 
 if (process.env.NODE_ENV !== 'production') {
-  var ReactPropTypesSecret = __webpack_require__(4);
+  var ReactPropTypesSecret = __webpack_require__(3);
   var loggedTypeFailures = {};
-  var has = __webpack_require__(7);
+  var has = __webpack_require__(6);
 
   printWarning = function(text) {
     var message = 'Warning: ' + text;
@@ -31725,7 +31595,7 @@ module.exports = checkPropTypes;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 25 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31738,7 +31608,7 @@ module.exports = checkPropTypes;
 
 
 
-var ReactPropTypesSecret = __webpack_require__(4);
+var ReactPropTypesSecret = __webpack_require__(3);
 
 function emptyFunction() {}
 function emptyFunctionWithReset() {}
@@ -31797,662 +31667,16 @@ module.exports = function() {
 
 
 /***/ }),
+/* 25 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
 /* 26 */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 27 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(3);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-__webpack_require__(28);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Products = function (_React$Component) {
-  _inherits(Products, _React$Component);
-
-  function Products() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    _classCallCheck(this, Products);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Products.__proto__ || Object.getPrototypeOf(Products)).call.apply(_ref, [this].concat(args))), _this), _this.productClicked = function (EO) {
-      //e.preveantDefault();
-      _this.props.cbSelectRow(_this.props.code);
-    }, _this.deleteRow = function (EO) {
-      EO.stopPropagation();
-      var isOk = window.confirm("Вы действительно хотите удалить товар?");
-      if (isOk) {
-        _this.props.cbDeleteRow(_this.props.code);
-      }
-    }, _this.editRow = function (EO) {
-      /*  const isOkEdit=window.confirm("Вы действительно хотите редактировать товар?");
-        if(isOkEdit)*/
-      _this.props.cbEditRow(_this.props.code);
-    }, _temp), _possibleConstructorReturn(_this, _ret);
-  }
-
-  _createClass(Products, [{
-    key: 'render',
-    value: function render() {
-
-      return _react2.default.createElement(
-        'div',
-        { className: this.props.selItemCode === this.props.code ? "green product" : "blue product", onClick: this.productClicked },
-        _react2.default.createElement(
-          'div',
-          { className: 'product_item' },
-          this.props.name
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'price' },
-          this.props.price
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'image' },
-          _react2.default.createElement('img', { src: this.props.image, alt: 'image' })
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'count' },
-          this.props.count
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'button' },
-          _react2.default.createElement(
-            'button',
-            { onClick: this.editRow },
-            '\u0420\u0435\u0434\u0430\u043A\u0442\u0438\u0440\u043E\u0432\u0430\u0442\u044C'
-          ),
-          _react2.default.createElement(
-            'button',
-            { onClick: this.deleteRow },
-            '\u0423\u0434\u0430\u043B\u0438\u0442\u044C'
-          )
-        )
-      );
-    }
-  }]);
-
-  return Products;
-}(_react2.default.Component);
-
-Products.propTypes = {
-  code: _propTypes2.default.number.isRequired,
-  //id: PropTypes.number.isRequired,
-  count: _propTypes2.default.number.isRequired,
-  name: _propTypes2.default.string.isRequired,
-  price: _propTypes2.default.number.isRequired,
-  selItemCode: _propTypes2.default.number,
-  cardMode: _propTypes2.default.number,
-  cbSelectRow: _propTypes2.default.func.isRequired,
-  cbDeleteRow: _propTypes2.default.func.isRequired,
-  cbEditRow: _propTypes2.default.func.isRequired,
-  image: _propTypes2.default.string.isRequired
-  // cbShowCard:PropTypes.func.isRequired,
-
-};
-exports.default = Products;
-
-/***/ }),
-/* 28 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 29 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(3);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-__webpack_require__(30);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var InfoCard = function (_React$Component) {
-  _inherits(InfoCard, _React$Component);
-
-  function InfoCard() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    _classCallCheck(this, InfoCard);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = InfoCard.__proto__ || Object.getPrototypeOf(InfoCard)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-      selItemCode: null,
-      cardMode: 0 // 0 - нет, 1 - просмотр, 2 - редактирование, 3 - добавление
-    }, _temp), _possibleConstructorReturn(_this, _ret);
-  }
-
-  _createClass(InfoCard, [{
-    key: 'render',
-
-
-    /*    <div className={(this.props.selItemCode===this.props.code)?"visible infoCard":"infoCard"}>*/
-    //&&(this.props.cardMode==1)
-    value: function render() {
-
-      return _react2.default.createElement(
-        'div',
-        { className: this.props.selItemCode === this.props.code ? "visible infoCard" : "infoCard" },
-        _react2.default.createElement(
-          'h3',
-          null,
-          '\u0418\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044F'
-        ),
-        _react2.default.createElement('img', { src: this.props.image, alt: 'image' }),
-        _react2.default.createElement(
-          'div',
-          null,
-          '\u041D\u0430\u0438\u043C\u0435\u043D\u043E\u0432\u0430\u043D\u0438\u0435: ' + this.props.name
-        ),
-        _react2.default.createElement(
-          'div',
-          null,
-          '\u0421\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C: ' + this.props.price + ' \u0440\u0443\u0431'
-        ),
-        _react2.default.createElement(
-          'div',
-          null,
-          '\u041A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E: ' + this.props.count + ' \u0448\u0442'
-        )
-      );
-    }
-  }]);
-
-  return InfoCard;
-}(_react2.default.Component);
-
-InfoCard.propTypes = {
-  code: _propTypes2.default.number.isRequired,
-  //id: PropTypes.number.isRequired,
-  count: _propTypes2.default.number.isRequired,
-  name: _propTypes2.default.string.isRequired,
-  price: _propTypes2.default.number.isRequired,
-  selItemCode: _propTypes2.default.number,
-  image: _propTypes2.default.string.isRequired
-  //  cardMode:PropTypes.number.isRequired,
-
-
-};
-exports.default = InfoCard;
-
-/***/ }),
-/* 30 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 31 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(3);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-__webpack_require__(8);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var FormEdit = function (_React$Component) {
-  _inherits(FormEdit, _React$Component);
-
-  function FormEdit() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    _classCallCheck(this, FormEdit);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = FormEdit.__proto__ || Object.getPrototypeOf(FormEdit)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-      currName: _this.props.name,
-      currPrice: _this.props.price,
-      currCount: _this.props.count,
-      nameError: "",
-      priceError: "",
-      countError: "",
-      valid: true,
-      cardMode: 0
-    }, _this.validate = function () {
-      var nameError = "",
-          priceError = "",
-          countError = "",
-          valid = void 0;
-      if (_this.state.currName.length < 3) nameError = "Введите большее количество символов";
-
-      if (isNaN(_this.state.currPrice)) priceError = "Введите стоимость";
-
-      if (isNaN(_this.state.currCount)) countError = "Введите количество";
-
-      valid = !nameError && !priceError && !countError;
-      _this.setState({ nameError: nameError, priceError: priceError, countError: countError, valid: valid });
-    }, _this.changeName = function (EO) {
-      _this.setState({ currName: EO.target.value }, _this.validate);
-    }, _this.changePrice = function (EO) {
-      _this.setState({ currPrice: parseInt(EO.target.value) }, _this.validate);
-    }, _this.changeCount = function (EO) {
-      _this.setState({ currCount: parseInt(EO.target.value) }, _this.validate);
-    }, _this.save = function (EO) {
-      _this.props.cbSave(_this.props.code, { name: _this.state.currName, price: _this.state.currPrice, count: _this.state.currCount });
-    }, _this.cancel = function (EO) {
-      _this.props.cbCancel();
-      //this.setState({cardMode:0});
-    }, _temp), _possibleConstructorReturn(_this, _ret);
-  }
-
-  /* editRow=(EO)=>{
-     const isOkEdit=window.confirm("Вы действительно хотите редактировать товар?");
-     if(isOkEdit){
-       this.props.cbEditRow(this.props.code);
-     }
-   
-   }*/
-
-  _createClass(FormEdit, [{
-    key: 'render',
-
-
-    //&&(this.state.cardMode==2)
-
-    value: function render() {
-
-      return _react2.default.createElement(
-        'form',
-        { className: this.props.prodItemCode === this.props.code ? "visible edit" : "edit" },
-        _react2.default.createElement(
-          'h3',
-          null,
-          '\u0420\u0435\u0434\u0430\u043A\u0442\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435 \u0442\u043E\u0432\u0430\u0440\u0430 ' + this.props.name
-        ),
-        _react2.default.createElement(
-          'div',
-          null,
-          _react2.default.createElement(
-            'span',
-            null,
-            '\u041D\u0430\u0438\u043C\u0435\u043D\u043E\u0432\u0430\u043D\u0438\u0435: '
-          ),
-          _react2.default.createElement('input', { value: this.state.currName,
-            type: 'text',
-            name: 'name',
-            onChange: this.changeName
-
-          }),
-          _react2.default.createElement(
-            'span',
-            { style: { color: 'red' } },
-            ' ',
-            this.state.nameError
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          null,
-          _react2.default.createElement(
-            'span',
-            null,
-            '\u0421\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C: '
-          ),
-          _react2.default.createElement('input', {
-            value: this.state.currPrice,
-            type: 'number',
-            name: 'price',
-            onChange: this.changePrice
-
-          }),
-          _react2.default.createElement(
-            'span',
-            { style: { color: 'red' } },
-            ' ',
-            this.state.priceError
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          null,
-          _react2.default.createElement(
-            'span',
-            null,
-            '\u041A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E: '
-          ),
-          _react2.default.createElement('input', {
-            value: this.state.currCount,
-            type: 'number',
-            name: 'count',
-            onChange: this.changeCount
-
-          }),
-          _react2.default.createElement(
-            'span',
-            { style: { color: 'red' } },
-            ' ',
-            this.state.countError
-          )
-        ),
-        _react2.default.createElement('input', {
-          type: 'button',
-          onClick: this.save,
-          value: '\u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C',
-          disabled: !this.state.valid
-        }),
-        _react2.default.createElement('input', { type: 'button', onClick: this.cancel, value: '\u041E\u0442\u043C\u0435\u043D\u0430' })
-      );
-    }
-  }]);
-
-  return FormEdit;
-}(_react2.default.Component);
-
-FormEdit.propTypes = {
-
-  code: _propTypes2.default.number.isRequired,
-  //id: PropTypes.number.isRequired,
-  count: _propTypes2.default.number.isRequired,
-  name: _propTypes2.default.string.isRequired,
-  price: _propTypes2.default.number.isRequired,
-  selItemCode: _propTypes2.default.number,
-  image: _propTypes2.default.string.isRequired
-  /*      cbChangeName:PropTypes.func.isRequired,
-        cbChangePrice:PropTypes.func.isRequired,
-        cbChangeCount:PropTypes.func.isRequired,
-        cbEditRow:PropTypes.func.isRequired,*/
-  // cbCancel:PropTypes.func.isRequired,
-
-};
-exports.default = FormEdit;
-
-/***/ }),
-/* 32 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(3);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-__webpack_require__(8);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var FormAdd = function (_React$Component) {
-  _inherits(FormAdd, _React$Component);
-
-  function FormAdd() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    _classCallCheck(this, FormAdd);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = FormAdd.__proto__ || Object.getPrototypeOf(FormAdd)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-      addName: _this.props.name,
-      addPrice: _this.props.price,
-      addCount: _this.props.count,
-      nameError: "",
-      priceError: "",
-      countError: "",
-      valid: true,
-      cardMode: 0
-    }, _this.validate = function () {
-      var nameError = "",
-          priceError = "",
-          countError = "",
-          valid = void 0;
-      if (_this.state.addName.length < 3) nameError = "Введите большее количество символов";
-
-      if (isNaN(_this.state.addPrice)) priceError = "Введите стоимость";
-
-      if (isNaN(_this.state.addCount)) countError = "Введите количество";
-
-      valid = !nameError && !priceError && !countError;
-      _this.setState({ nameError: nameError, priceError: priceError, countError: countError, valid: valid });
-    }, _this.newName = function (EO) {
-      _this.setState({ addName: EO.target.value }, _this.validate);
-    }, _this.newPrice = function (EO) {
-      _this.setState({ addPrice: parseInt(EO.target.value) }, _this.validate);
-    }, _this.newCount = function (EO) {
-      _this.setState({ addCount: parseInt(EO.target.value) }, _this.validate);
-    }, _this.save = function (EO) {
-      _this.props.cbSave(_this.props.code, { name: _this.state.addName, price: _this.state.addPrice, count: _this.state.addCount });
-    }, _this.cancel = function (EO) {
-      _this.props.cbCancel();
-      //this.setState({cardMode:0});
-    }, _temp), _possibleConstructorReturn(_this, _ret);
-  }
-
-  /* editRow=(EO)=>{
-     const isOkEdit=window.confirm("Вы действительно хотите редактировать товар?");
-     if(isOkEdit){
-       this.props.cbEditRow(this.props.code);
-     }
-   
-   }*/
-
-  _createClass(FormAdd, [{
-    key: 'render',
-
-
-    //&&(this.state.cardMode==2)
-
-    value: function render() {
-
-      return _react2.default.createElement(
-        'form',
-        { className: 'visible edit' },
-        _react2.default.createElement(
-          'h3',
-          null,
-          '\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u0438\u0435 \u043D\u043E\u0432\u043E\u0433\u043E \u0442\u043E\u0432\u0430\u0440\u0430'
-        ),
-        _react2.default.createElement(
-          'div',
-          null,
-          _react2.default.createElement(
-            'span',
-            null,
-            '\u041D\u0430\u0438\u043C\u0435\u043D\u043E\u0432\u0430\u043D\u0438\u0435: '
-          ),
-          _react2.default.createElement('input', { value: this.state.addName,
-            type: 'text',
-            name: 'name',
-            onChange: this.newName
-
-          }),
-          _react2.default.createElement(
-            'span',
-            { style: { color: 'red' } },
-            ' ',
-            this.state.nameError
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          null,
-          _react2.default.createElement(
-            'span',
-            null,
-            '\u0421\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C: '
-          ),
-          _react2.default.createElement('input', {
-            value: this.state.addPrice,
-            type: 'number',
-            name: 'price',
-            onChange: this.newPrice
-
-          }),
-          _react2.default.createElement(
-            'span',
-            { style: { color: 'red' } },
-            ' ',
-            this.state.priceError
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          null,
-          _react2.default.createElement(
-            'span',
-            null,
-            '\u041A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E: '
-          ),
-          _react2.default.createElement('input', {
-            value: this.state.addCount,
-            type: 'number',
-            name: 'count',
-            onChange: this.newCount
-
-          }),
-          _react2.default.createElement(
-            'span',
-            { style: { color: 'red' } },
-            ' ',
-            this.state.countError
-          )
-        ),
-        _react2.default.createElement('input', {
-          type: 'button',
-          onClick: this.save,
-          value: '\u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C',
-          disabled: !this.state.valid
-        }),
-        _react2.default.createElement('input', { type: 'button', onClick: this.cancel, value: '\u041E\u0442\u043C\u0435\u043D\u0430' })
-      );
-    }
-  }]);
-
-  return FormAdd;
-}(_react2.default.Component);
-
-FormAdd.propTypes = {
-
-  code: _propTypes2.default.number.isRequired,
-  //id: PropTypes.number.isRequired,
-  count: _propTypes2.default.number.isRequired,
-  name: _propTypes2.default.string.isRequired,
-  price: _propTypes2.default.number.isRequired,
-  selItemCode: _propTypes2.default.number
-  //  image:PropTypes.string.isRequired,
-  /*      cbChangeName:PropTypes.func.isRequired,
-        cbChangePrice:PropTypes.func.isRequired,
-        cbChangeCount:PropTypes.func.isRequired,
-        cbEditRow:PropTypes.func.isRequired,*/
-  // cbCancel:PropTypes.func.isRequired,
-
-};
-exports.default = FormAdd;
-
-/***/ }),
-/* 33 */
-/***/ (function(module, exports) {
-
-module.exports = [{"name":"Mercedes-Benz GL-Класс","code":11,"id":1,"price":128700,"image":"https://stock-service.atlantm.by/uploads/cars-amp/9v/uc/9VucdCIoWO_1000_550.webp","count":8},{"name":"Land Rover Range Rover Velar","code":12,"id":2,"price":170269,"image":"https://stock-service.atlantm.by/uploads/cars-amp/0w/na/0wNaSV7tvv_1000_550.webp","count":5},{"name":"Toyota Land Cruiser","code":13,"id":3,"price":229437,"image":"https://stock-service.atlantm.by/uploads/cars-amp/hp/av/HPAVWT9PdQ_1000_550.webp","count":4},{"name":"Jaguar I-Pace","code":14,"id":4,"price":204876,"image":"https://stock-service.atlantm.by/uploads/cars-amp/xr/zk/xRzKIKvLRg_1000_550.webp","count":2}]
+module.exports = [{"text":"california","code":1},{"text":"everything","code":2},{"text":"aboveboard","code":3},{"text":"washington","code":4},{"text":"basketball","code":5},{"text":"weathering","code":6},{"text":"characters","code":7},{"text":"literature","code":8},{"text":"contraband","code":9},{"text":"appreciate","code":10}]
 
 /***/ })
 /******/ ]);

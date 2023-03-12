@@ -201,9 +201,12 @@ h1{
     margin-bottom: 10px;
 }
 .infoCard{
-    display: none;
+  display: none;
 }
-.infoCard.visible{
+.visible .infoCard{
+    display: block;
+}
+.visible.infoCard{
     display: block;
 }h3{
     font-size: 18px;
