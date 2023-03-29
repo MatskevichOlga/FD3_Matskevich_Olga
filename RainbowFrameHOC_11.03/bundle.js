@@ -258,6 +258,21 @@ process.umask = function() { return 0; };
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+if (process.env.NODE_ENV === 'production') {
+  module.exports = __webpack_require__(8);
+} else {
+  module.exports = __webpack_require__(9);
+}
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
 /*
 object-assign
 (c) Sindre Sorhus
@@ -351,21 +366,6 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 
 
 /***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
-
-if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(8);
-} else {
-  module.exports = __webpack_require__(9);
-}
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
-
-/***/ }),
 /* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -428,7 +428,7 @@ module.exports = Function.call.bind(Object.prototype.hasOwnProperty);
 "use strict";
 
 
-var _react = __webpack_require__(2);
+var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -436,19 +436,49 @@ var _reactDom = __webpack_require__(10);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _FilterNew = __webpack_require__(18);
+var _withRainbowFrame = __webpack_require__(18);
 
-var _FilterNew2 = _interopRequireDefault(_FilterNew);
+var _DoubleButton = __webpack_require__(25);
+
+var _DoubleButton2 = _interopRequireDefault(_DoubleButton);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var titleText = 'Сортировка списка';
-var wordsArr = __webpack_require__(26);
+// let colors=['red','orange', 'yellow','green', '#00BFFF', 'blue', 'purple'];
+//let FramedDoubleButton=withRainbowFrame(colors)(DoubleButton);
 
-_reactDom2.default.render(_react2.default.createElement(_FilterNew2.default, {
-  title: titleText,
-  words: wordsArr
-}), document.getElementById('container'));
+var colors = ['red', 'orange', 'yellow', 'green', '#00BFFF', 'blue', 'purple'];
+var FramedDoubleButton = (0, _withRainbowFrame.withRainbowFrame)(colors)(_DoubleButton2.default);
+_reactDom2.default.render(_react2.default.createElement(
+  'div',
+  { style: { width: 500, textAlign: 'center', margin: '30px auto' } },
+  _react2.default.createElement(
+    _DoubleButton2.default,
+    { caption1: '\u043E\u0434\u043D\u0430\u0436\u0434\u044B', caption2: '\u043F\u043E\u0440\u0443', cbPressed: function cbPressed(num) {
+        return alert(num);
+      } },
+    ' \u0432 \u0441\u0442\u0443\u0434\u0451\u043D\u0443\u044E \u0437\u0438\u043C\u043D\u044E\u044E '
+  ),
+  _react2.default.createElement(
+    FramedDoubleButton,
+    { caption1: '\u044F \u0438\u0437 \u043B\u0435\u0441\u0443', caption2: '\u043C\u043E\u0440\u043E\u0437', cbPressed: function cbPressed(num) {
+        return alert(num);
+      } },
+    ' \u0432\u044B\u0448\u0435\u043B, \u0431\u044B\u043B \u0441\u0438\u043B\u044C\u043D\u044B\u0439 '
+  )
+), document.getElementById('container'));
+
+/*
+  return (
+    <div style={style}>
+        <DoubleButton caption1="однажды" caption2="пору" cbPressed={num => alert(num)} >в студёную зимнюю</DoubleButton>
+        <br />
+        <FramedDoubleButton caption1="я из лесу" caption2="мороз" cbPressed={num => alert(num)}>
+            вышел, был сильный
+        </FramedDoubleButton>
+    </div>
+
+);*/
 
 /***/ }),
 /* 8 */
@@ -463,7 +493,7 @@ _reactDom2.default.render(_react2.default.createElement(_FilterNew2.default, {
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-var l=__webpack_require__(1),n=60103,p=60106;exports.Fragment=60107;exports.StrictMode=60108;exports.Profiler=60114;var q=60109,r=60110,t=60112;exports.Suspense=60113;var u=60115,v=60116;
+var l=__webpack_require__(2),n=60103,p=60106;exports.Fragment=60107;exports.StrictMode=60108;exports.Profiler=60114;var q=60109,r=60110,t=60112;exports.Suspense=60113;var u=60115,v=60116;
 if("function"===typeof Symbol&&Symbol.for){var w=Symbol.for;n=w("react.element");p=w("react.portal");exports.Fragment=w("react.fragment");exports.StrictMode=w("react.strict_mode");exports.Profiler=w("react.profiler");q=w("react.provider");r=w("react.context");t=w("react.forward_ref");exports.Suspense=w("react.suspense");u=w("react.memo");v=w("react.lazy")}var x="function"===typeof Symbol&&Symbol.iterator;
 function y(a){if(null===a||"object"!==typeof a)return null;a=x&&a[x]||a["@@iterator"];return"function"===typeof a?a:null}function z(a){for(var b="https://reactjs.org/docs/error-decoder.html?invariant="+a,c=1;c<arguments.length;c++)b+="&args[]="+encodeURIComponent(arguments[c]);return"Minified React error #"+a+"; visit "+b+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings."}
 var A={isMounted:function(){return!1},enqueueForceUpdate:function(){},enqueueReplaceState:function(){},enqueueSetState:function(){}},B={};function C(a,b,c){this.props=a;this.context=b;this.refs=B;this.updater=c||A}C.prototype.isReactComponent={};C.prototype.setState=function(a,b){if("object"!==typeof a&&"function"!==typeof a&&null!=a)throw Error(z(85));this.updater.enqueueSetState(this,a,b,"setState")};C.prototype.forceUpdate=function(a){this.updater.enqueueForceUpdate(this,a,"forceUpdate")};
@@ -500,7 +530,7 @@ if (process.env.NODE_ENV !== "production") {
   (function() {
 'use strict';
 
-var _assign = __webpack_require__(1);
+var _assign = __webpack_require__(2);
 
 // TODO: this is special because it gets imported during build.
 var ReactVersion = '17.0.2';
@@ -2883,7 +2913,7 @@ if (process.env.NODE_ENV === 'production') {
 /*
  Modernizr 3.0.0pre (Custom Build) | MIT
 */
-var aa=__webpack_require__(2),m=__webpack_require__(1),r=__webpack_require__(4);function y(a){for(var b="https://reactjs.org/docs/error-decoder.html?invariant="+a,c=1;c<arguments.length;c++)b+="&args[]="+encodeURIComponent(arguments[c]);return"Minified React error #"+a+"; visit "+b+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings."}if(!aa)throw Error(y(227));var ba=new Set,ca={};function da(a,b){ea(a,b);ea(a+"Capture",b)}
+var aa=__webpack_require__(1),m=__webpack_require__(2),r=__webpack_require__(4);function y(a){for(var b="https://reactjs.org/docs/error-decoder.html?invariant="+a,c=1;c<arguments.length;c++)b+="&args[]="+encodeURIComponent(arguments[c]);return"Minified React error #"+a+"; visit "+b+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings."}if(!aa)throw Error(y(227));var ba=new Set,ca={};function da(a,b){ea(a,b);ea(a+"Capture",b)}
 function ea(a,b){ca[a]=b;for(a=0;a<b.length;a++)ba.add(b[a])}
 var fa=!("undefined"===typeof window||"undefined"===typeof window.document||"undefined"===typeof window.document.createElement),ha=/^[:A-Z_a-z\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u02FF\u0370-\u037D\u037F-\u1FFF\u200C-\u200D\u2070-\u218F\u2C00-\u2FEF\u3001-\uD7FF\uF900-\uFDCF\uFDF0-\uFFFD][:A-Z_a-z\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u02FF\u0370-\u037D\u037F-\u1FFF\u200C-\u200D\u2070-\u218F\u2C00-\u2FEF\u3001-\uD7FF\uF900-\uFDCF\uFDF0-\uFFFD\-.0-9\u00B7\u0300-\u036F\u203F-\u2040]*$/,ia=Object.prototype.hasOwnProperty,
 ja={},ka={};function la(a){if(ia.call(ka,a))return!0;if(ia.call(ja,a))return!1;if(ha.test(a))return ka[a]=!0;ja[a]=!0;return!1}function ma(a,b,c,d){if(null!==c&&0===c.type)return!1;switch(typeof b){case "function":case "symbol":return!0;case "boolean":if(d)return!1;if(null!==c)return!c.acceptsBooleans;a=a.toLowerCase().slice(0,5);return"data-"!==a&&"aria-"!==a;default:return!1}}
@@ -3872,8 +3902,8 @@ if (process.env.NODE_ENV !== "production") {
   (function() {
 'use strict';
 
-var React = __webpack_require__(2);
-var _assign = __webpack_require__(1);
+var React = __webpack_require__(1);
+var _assign = __webpack_require__(2);
 var Scheduler = __webpack_require__(4);
 var tracing = __webpack_require__(15);
 
@@ -30518,18 +30548,17 @@ exports.unstable_wrap = unstable_wrap;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.withRainbowFrame = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(2);
+var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
 var _propTypes = __webpack_require__(19);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
-
-__webpack_require__(25);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -30539,98 +30568,66 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Filter = function (_React$Component) {
-  _inherits(Filter, _React$Component);
+//class RainbowFrameHOC extends React.Component {
+var withRainbowFrame = function withRainbowFrame(colors) {
+  return function (Comp) {
 
-  function Filter() {
-    var _ref;
+    return function (_React$Component) {
+      _inherits(RainbowFrameHOC, _React$Component);
 
-    var _temp, _this, _ret;
+      function RainbowFrameHOC() {
+        _classCallCheck(this, RainbowFrameHOC);
 
-    _classCallCheck(this, Filter);
+        return _possibleConstructorReturn(this, (RainbowFrameHOC.__proto__ || Object.getPrototypeOf(RainbowFrameHOC)).apply(this, arguments));
+      }
 
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
+      _createClass(RainbowFrameHOC, [{
+        key: 'render',
+        value: function render() {
+          var rainbowFrameCode = _react2.default.createElement(Comp, this.props);
+          var _iteratorNormalCompletion = true;
+          var _didIteratorError = false;
+          var _iteratorError = undefined;
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Filter.__proto__ || Object.getPrototypeOf(Filter)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-      isSort: false,
-      filterStr: '',
-      currWordList: _this.props.words
-    }, _this.filterChange = function (e) {
-      _this.setState({ filterStr: e.target.value }, _this.processList);
-    }, _this.sortClicked = function (e) {
-      _this.setState({ isSort: e.target.checked }, _this.processList);
-      // this.setState({isSort:!this.state.isSort},);
-    }, _this.reset = function (e) {
-      _this.setState({ isSort: false, filterStr: "" /*,currWordList:this.props.words*/ }, _this.processList);
-    }, _this.processList = function () {
-      var list = _this.props.words.slice();
-      if (_this.state.filterStr) {
-        list = list.filter(function (s) {
-          return s.includes(_this.state.filterStr);
-        });
-      };
-      if (_this.state.isSort === true)
-        //if(list===this.props.words)
-        //  list=list.slice();
-        list.sort();
-      _this.setState({ currWordList: list });
-    }, _temp), _possibleConstructorReturn(_this, _ret);
-  }
+          try {
+            for (var _iterator = colors[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+              var color = _step.value;
 
-  _createClass(Filter, [{
-    key: 'render',
-    value: function render() {
-      var titleCode = this.props.title;
+              rainbowFrameCode = _react2.default.createElement(
+                'div',
+                { style: { textAlign: 'center', border: 'solid 6px ' + color, padding: "6px" } },
+                rainbowFrameCode
+              );
+            }
+          } catch (err) {
+            _didIteratorError = true;
+            _iteratorError = err;
+          } finally {
+            try {
+              if (!_iteratorNormalCompletion && _iterator.return) {
+                _iterator.return();
+              }
+            } finally {
+              if (_didIteratorError) {
+                throw _iteratorError;
+              }
+            }
+          }
 
-      var currWordListCode = this.state.currWordList.join("\n");
-      //this.state.currWordList.map( v => {
-      // return <div className='list_item'>{this.state.currWordList.join("\n")}</div>
+          return _react2.default.createElement(
+            'div',
+            { style: { width: 500, textAlign: 'center', margin: '10px auto' } },
+            rainbowFrameCode
+          );
+        }
+      }]);
 
-      //  });  
-      // key={v.text}
-      return _react2.default.createElement(
-        'div',
-        { className: 'filterBlock' },
-        _react2.default.createElement(
-          'h3',
-          { className: 'title' },
-          titleCode
-        ),
-        _react2.default.createElement('input', { type: 'checkbox', checked: this.state.isSort, onChange: this.sortClicked }),
-        _react2.default.createElement('input', { type: 'text', value: this.state.filterStr, onChange: this.filterChange }),
-        _react2.default.createElement('input', { type: 'button', value: 'C\u0431\u0440\u043E\u0441', onClick: this.reset }),
-        _react2.default.createElement(
-          'div',
-          { className: 'word_list' },
-          currWordListCode
-        )
-      );
-    }
-  }]);
-
-  return Filter;
-}(_react2.default.Component);
-
-Filter.propTypes = {
-  title: _propTypes2.default.string.isRequired,
-  words: _propTypes2.default.array.isRequired
-
+      return RainbowFrameHOC;
+    }(_react2.default.Component);
+  };
 };
-exports.default = Filter;
 
-/*  {"text":"california","code":1}, 
-  {"text":"everything","code":2}, 
-  {"text":"aboveboard","code":3}, 
-  {"text":"washington","code":4},
-  {"text":"basketball","code":5},
-  {"text":"weathering","code":6},
-  {"text":"characters","code":7},
-  {"text":"literature","code":8},
-  {"text":"contraband","code":9},
-  {"text":"appreciate","code":10}
-]*/
+exports.withRainbowFrame = withRainbowFrame;
 
 /***/ }),
 /* 19 */
@@ -30884,7 +30881,7 @@ exports.typeOf = typeOf;
 
 
 var ReactIs = __webpack_require__(5);
-var assign = __webpack_require__(1);
+var assign = __webpack_require__(2);
 
 var ReactPropTypesSecret = __webpack_require__(3);
 var has = __webpack_require__(6);
@@ -31672,15 +31669,46 @@ module.exports = function() {
 
 /***/ }),
 /* 25 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-// removed by extract-text-webpack-plugin
+"use strict";
 
-/***/ }),
-/* 26 */
-/***/ (function(module, exports) {
 
-module.exports = ["california","everything","aboveboard","washington","basketball","weathering","characters","literature","contraband","appreciate"]
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var DoubleButton = function DoubleButton(_ref) {
+    var caption1 = _ref.caption1,
+        caption2 = _ref.caption2,
+        cbPressed = _ref.cbPressed,
+        children = _ref.children;
+
+
+    return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement('input', { type: 'button', value: caption1, onClick: function onClick() {
+                return cbPressed(caption1);
+            } }),
+        _react2.default.createElement(
+            'span',
+            null,
+            children
+        ),
+        _react2.default.createElement('input', { type: 'button', value: caption2, onClick: function onClick() {
+                return cbPressed(caption2);
+            } })
+    );
+};
+
+exports.default = DoubleButton;
 
 /***/ })
 /******/ ]);
