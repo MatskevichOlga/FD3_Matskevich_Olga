@@ -30524,6 +30524,8 @@ var _propTypes = __webpack_require__(19);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
+__webpack_require__(25);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -30556,7 +30558,7 @@ var BR2JSX = function (_React$Component) {
         result+=lines[i] + <br/>;*/
       }
       return _react2.default.createElement(
-        'span',
+        _react2.default.Fragment,
         null,
         result
       );
@@ -31609,6 +31611,12 @@ module.exports = function() {
   return ReactPropTypes;
 };
 
+
+/***/ }),
+/* 25 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

@@ -5,24 +5,33 @@ class BR2JSX extends React.Component {
   
  static propTypes = {
     text: PropTypes.string.isRequired,
-   // result:PropTypes.array.isRequired,
+
 };
   
 render() {
   let lines = this.props.text.split(/<br\s?\/?>/);
-//  let result="";
-let result=[];
-  for (let i=0; i<lines.length; i++){
+//let result=[];
+
+const result = lines.map((word, id) => {
+
+  return (
+    <React.Fragment key={id}>
+        {id !== 0 && <br />} {word}
+    </React.Fragment>
+)
+
+ /* for (let i=0; i<lines.length; i++){
     result.push(lines[i]);
     if(i<(lines.length-1))
-    result.push(<br/>);
-  
+    result.push(<br/>);*/
+
+  // key={lines.length.toString()};
    // if(i)
     /*  result+=lines[i];
     result+=lines[i] + <br/>;*/
 
-  }
-return <React.Fragment>{result}</React.Fragment>;
+  })
+return <div>{result}</div>;
 }
 }
 
