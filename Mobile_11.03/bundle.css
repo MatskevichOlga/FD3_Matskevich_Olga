@@ -1,36 +1,36 @@
-div.MobileClient
-{
-  padding: 2px 0;
+table{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+}.MobileForm {
+    width: 350px;
+ 
+}
+.FormRow span {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+}
+.FormRow{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 8px;
 }
 
-span.MobileClientBalance
-{
-  float: right;
-  width: 30px;
-  font-weight: bold;
-  text-align: right;
+#container{
+  display: flex;
+  justify-content: center;
 }
-
-span.MobileClientFIO
-{
-  margin-right: 30px;
+.MobileCompany{
+  margin-top: 50px;
 }
-.MobileCompany
-{
-  border: double gray 3px;
-  width: 180px;
-  padding: 3px 7px;
-  background-color: lightyellow;
+.MobileClient{
+  margin: 8px 0;
 }
-
-.MobileCompanyName
-{
-  font-weight: bold;
+.MobileClient td{
+  border: 1px solid #7f9af4;
+  padding: 10px;
 }
-
-.MobileCompanyClients
-{
-  padding-top: 5px;
-}
-
 /*# sourceMappingURL=bundle.css.map*/

@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 8);
+/******/ 	return __webpack_require__(__webpack_require__.s = 9);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -261,9 +261,9 @@ process.umask = function() { return 0; };
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(9);
-} else {
   module.exports = __webpack_require__(10);
+} else {
+  module.exports = __webpack_require__(11);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
@@ -370,6 +370,50 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.mobileEvents = undefined;
+
+var _events = __webpack_require__(26);
+
+var mobileEvents = new _events.EventEmitter();
+
+exports.mobileEvents = mobileEvents;
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(process) {/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+if (process.env.NODE_ENV !== 'production') {
+  var ReactIs = __webpack_require__(7);
+
+  // By explicitly using `prop-types` you are opting into new development behavior.
+  // http://fb.me/prop-types-in-prod
+  var throwOnDirectAccess = true;
+  module.exports = __webpack_require__(23)(ReactIs.isElement, throwOnDirectAccess);
+} else {
+  // By explicitly using `prop-types` you are opting into new production behavior.
+  // http://fb.me/prop-types-in-prod
+  module.exports = __webpack_require__(25)();
+}
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -385,47 +429,6 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
-
-if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(13);
-} else {
-  module.exports = __webpack_require__(14);
-}
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(process) {/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-if (process.env.NODE_ENV !== 'production') {
-  var ReactIs = __webpack_require__(6);
-
-  // By explicitly using `prop-types` you are opting into new development behavior.
-  // http://fb.me/prop-types-in-prod
-  var throwOnDirectAccess = true;
-  module.exports = __webpack_require__(22)(ReactIs.isElement, throwOnDirectAccess);
-} else {
-  // By explicitly using `prop-types` you are opting into new production behavior.
-  // http://fb.me/prop-types-in-prod
-  module.exports = __webpack_require__(24)();
-}
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
-
-/***/ }),
 /* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -433,22 +436,37 @@ if (process.env.NODE_ENV !== 'production') {
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(20);
+  module.exports = __webpack_require__(14);
 } else {
-  module.exports = __webpack_require__(21);
+  module.exports = __webpack_require__(15);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
 /* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+if (process.env.NODE_ENV === 'production') {
+  module.exports = __webpack_require__(21);
+} else {
+  module.exports = __webpack_require__(22);
+}
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 8 */
 /***/ (function(module, exports) {
 
 module.exports = Function.call.bind(Object.prototype.hasOwnProperty);
 
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -458,26 +476,24 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(11);
+var _reactDom = __webpack_require__(12);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _MobileCompany = __webpack_require__(19);
+var _MobileCompany = __webpack_require__(20);
 
 var _MobileCompany2 = _interopRequireDefault(_MobileCompany);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var companyName = 'A1';
-var clientsArr = [{ id: 101, fio: "Иванов И.И.", balance: 200 }, { id: 105, fio: "Сидоров С.С.", balance: 250 }, { id: 110, fio: "Петров П.П.", balance: 180 }, { id: 120, fio: "Григорьев Г.Г.", balance: 220 }];
+var clientsArr = [{ id: 101, fam: "Иванов", im: "Иван", otch: "Иванович", balance: 200 }, { id: 102, fam: "Сидоров", im: "Сидор", otch: "Сидорович", balance: 250 }, { id: 103, fam: "Петров", im: "Пётр", otch: "Петрович", balance: 180 }, { id: 104, fam: "Григорьев", im: "Григорий", otch: "Григорьевич", balance: -220 }];
 
 _reactDom2.default.render(_react2.default.createElement(_MobileCompany2.default, {
-  name: companyName,
   clients: clientsArr
 }), document.getElementById('container'));
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -507,7 +523,7 @@ exports.useLayoutEffect=function(a,b){return S().useLayoutEffect(a,b)};exports.u
 
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2848,7 +2864,7 @@ exports.version = ReactVersion;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2886,15 +2902,15 @@ if (process.env.NODE_ENV === 'production') {
   // DCE check should happen before ReactDOM bundle executes so that
   // DevTools can report bad minification during injection.
   checkDCE();
-  module.exports = __webpack_require__(12);
+  module.exports = __webpack_require__(13);
 } else {
-  module.exports = __webpack_require__(15);
+  module.exports = __webpack_require__(16);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2909,7 +2925,7 @@ if (process.env.NODE_ENV === 'production') {
 /*
  Modernizr 3.0.0pre (Custom Build) | MIT
 */
-var aa=__webpack_require__(1),m=__webpack_require__(2),r=__webpack_require__(4);function y(a){for(var b="https://reactjs.org/docs/error-decoder.html?invariant="+a,c=1;c<arguments.length;c++)b+="&args[]="+encodeURIComponent(arguments[c]);return"Minified React error #"+a+"; visit "+b+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings."}if(!aa)throw Error(y(227));var ba=new Set,ca={};function da(a,b){ea(a,b);ea(a+"Capture",b)}
+var aa=__webpack_require__(1),m=__webpack_require__(2),r=__webpack_require__(6);function y(a){for(var b="https://reactjs.org/docs/error-decoder.html?invariant="+a,c=1;c<arguments.length;c++)b+="&args[]="+encodeURIComponent(arguments[c]);return"Minified React error #"+a+"; visit "+b+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings."}if(!aa)throw Error(y(227));var ba=new Set,ca={};function da(a,b){ea(a,b);ea(a+"Capture",b)}
 function ea(a,b){ca[a]=b;for(a=0;a<b.length;a++)ba.add(b[a])}
 var fa=!("undefined"===typeof window||"undefined"===typeof window.document||"undefined"===typeof window.document.createElement),ha=/^[:A-Z_a-z\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u02FF\u0370-\u037D\u037F-\u1FFF\u200C-\u200D\u2070-\u218F\u2C00-\u2FEF\u3001-\uD7FF\uF900-\uFDCF\uFDF0-\uFFFD][:A-Z_a-z\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u02FF\u0370-\u037D\u037F-\u1FFF\u200C-\u200D\u2070-\u218F\u2C00-\u2FEF\u3001-\uD7FF\uF900-\uFDCF\uFDF0-\uFFFD\-.0-9\u00B7\u0300-\u036F\u203F-\u2040]*$/,ia=Object.prototype.hasOwnProperty,
 ja={},ka={};function la(a){if(ia.call(ka,a))return!0;if(ia.call(ja,a))return!1;if(ha.test(a))return ka[a]=!0;ja[a]=!0;return!1}function ma(a,b,c,d){if(null!==c&&0===c.type)return!1;switch(typeof b){case "function":case "symbol":return!0;case "boolean":if(d)return!1;if(null!==c)return!c.acceptsBooleans;a=a.toLowerCase().slice(0,5);return"data-"!==a&&"aria-"!==a;default:return!1}}
@@ -3198,7 +3214,7 @@ exports.unstable_renderSubtreeIntoContainer=function(a,b,c,d){if(!rk(c))throw Er
 
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3225,7 +3241,7 @@ exports.unstable_wrapCallback=function(a){var b=P;return function(){var c=P;P=b;
 
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3879,7 +3895,7 @@ exports.unstable_wrapCallback = unstable_wrapCallback;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3900,8 +3916,8 @@ if (process.env.NODE_ENV !== "production") {
 
 var React = __webpack_require__(1);
 var _assign = __webpack_require__(2);
-var Scheduler = __webpack_require__(4);
-var tracing = __webpack_require__(16);
+var Scheduler = __webpack_require__(6);
+var tracing = __webpack_require__(17);
 
 var ReactSharedInternals = React.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
 
@@ -30149,22 +30165,22 @@ exports.version = ReactVersion;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(17);
-} else {
   module.exports = __webpack_require__(18);
+} else {
+  module.exports = __webpack_require__(19);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30180,7 +30196,7 @@ var b=0;exports.__interactionsRef=null;exports.__subscriberRef=null;exports.unst
 
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30535,7 +30551,7 @@ exports.unstable_wrap = unstable_wrap;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30553,15 +30569,25 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(5);
+var _propTypes = __webpack_require__(4);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _MobileClient = __webpack_require__(25);
+var _events = __webpack_require__(3);
+
+var _MobileClient = __webpack_require__(27);
 
 var _MobileClient2 = _interopRequireDefault(_MobileClient);
 
-__webpack_require__(27);
+var _MobileForm = __webpack_require__(29);
+
+var _MobileForm2 = _interopRequireDefault(_MobileForm);
+
+var _MobileFilter = __webpack_require__(31);
+
+var _MobileFilter2 = _interopRequireDefault(_MobileFilter);
+
+__webpack_require__(32);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -30572,6 +30598,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var defaultClient = {
+  id: 0,
+  fam: '',
+  im: '',
+  otch: '',
+  balance: 0
+};
 
 var MobileCompany = function (_React$PureComponent) {
   _inherits(MobileCompany, _React$PureComponent);
@@ -30588,76 +30622,158 @@ var MobileCompany = function (_React$PureComponent) {
     }
 
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = MobileCompany.__proto__ || Object.getPrototypeOf(MobileCompany)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-      name: _this.props.name,
-      clients: _this.props.clients
-    }, _this.setName1 = function () {
-      _this.setState({ name: 'МТС' });
-    }, _this.setName2 = function () {
-      _this.setState({ name: 'A1' });
-    }, _this.setBalance = function (clientId, newBalance) {
-      var newClients = [].concat(_toConsumableArray(_this.state.clients)); // копия самого массива клиентов
-      newClients.forEach(function (c, i) {
-        if (c.id == clientId) {
-          //if ( c.id==clientId && c.balance!==newBalance ) {
-          var newClient = _extends({}, c); // копия хэша изменившегося клиента
-          newClient.balance = newBalance;
-          newClients[i] = newClient;
+      clients: _this.props.clients,
+      status: 0,
+      editClient: defaultClient,
+      isEditMode: false
+    }, _this.addId = function () {
+      //находим максимальное и добавляем 1
+      var clients = _this.state.clients;
+      var maxId = clients.reduce(function (prev, curr) {
+        if (prev.id > curr.id) {
+          return prev.id;
         }
+        return curr.id;
       });
-      _this.setState({ clients: newClients });
-    }, _this.setBalance1 = function () {
-      _this.setBalance(105, 230);
-    }, _this.setBalance2 = function () {
-      _this.setBalance(105, 250);
+
+      return maxId + 1;
+    }, _this.componentDidMount = function () {
+      //подписывать компонент на внешние события
+      _events.mobileEvents.addListener('EventDelete', _this.delete);
+      _events.mobileEvents.addListener('EventEdit', _this.edit);
+      _events.mobileEvents.addListener('EventCreate', _this.create);
+      _events.mobileEvents.addListener('EventSaveClient', _this.save);
+      _events.mobileEvents.addListener('EventCancel', _this.cancel);
+      _events.mobileEvents.addListener('EventAll', _this.filterAll);
+      _events.mobileEvents.addListener('EventActive', _this.filterActive);
+      _events.mobileEvents.addListener('EventBlocked', _this.filterBlocked);
+    }, _this.componentWillUnmount = function () {
+      //отписывать компонент от внешних событий
+      _events.mobileEvents.removeListener('EventDelete', _this.delete);
+      _events.mobileEvents.removeListener('EventEdit', _this.edit);
+      _events.mobileEvents.removeListener('EventCreate', _this.create);
+      _events.mobileEvents.removeListener('EventSaveClient', _this.save);
+      _events.mobileEvents.removeListener('EventCancel', _this.cancel);
+      _events.mobileEvents.removeListener('EventAll', _this.filterAll);
+      _events.mobileEvents.removeListener('EventActive', _this.filterActive);
+      _events.mobileEvents.removeListener('EventBlocked', _this.filterBlocked);
+    }, _this.create = function () {
+      _this.setState({ editClient: defaultClient, isEditMode: true });
+    }, _this.cancel = function () {
+      _this.setState({ isEditMode: false });
+    }, _this.edit = function (client) {
+      _this.setState({ editClient: client, isEditMode: true });
+    }, _this.delete = function (id) {
+      var newclient = _this.state.clients.filter(function (client) {
+        return client.id !== id;
+      });
+      _this.setState({ clients: newclient });
+    }, _this.save = function (client) {
+      _this.setState({ isEditMode: false });
+      var oldClient = _this.state.clients.some(function (v) {
+        return v.id === client.id;
+      });
+
+      if (!oldClient) {
+        _this.setState(function (prev) {
+          return { clients: [].concat(_toConsumableArray(prev.clients), [_extends({}, client, { id: _this.addId() })]) };
+        });
+      } else {
+        var newClientsArr = _this.state.clients.map(function (s) {
+          return s.id === client.id ? client : s;
+        });
+        _this.setState({ clients: [].concat(_toConsumableArray(newClientsArr)) });
+      }
+    }, _this.filterAll = function () {
+      return _this.setState({ status: 0 });
+    }, _this.filterActive = function () {
+      return _this.setState({ status: 1 });
+    }, _this.filterBlocked = function () {
+      return _this.setState({ status: 2 });
     }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
-  /*
-  setBalance = (clientId,newBalance) => {
-    let changed=false;
-    let newClients=[...this.state.clients]; // копия самого массива клиентов
-    newClients.forEach( (c,i) => {
-      if ( c.id==clientId && c.balance!=newBalance ) {
-        let newClient={...c}; // копия хэша изменившегося клиента
-        newClient.balance=newBalance;
-        newClients[i]=newClient;
-        changed=true;
-      }
-    } );
-    if ( changed )
-      this.setState({clients:newClients});
-  };
-  */
+  ///подписываемся на события из этого потока
 
   _createClass(MobileCompany, [{
     key: 'render',
     value: function render() {
+      var _this2 = this;
 
       console.log("MobileCompany render");
+      var filterClient = this.state.clients.filter(function (client) {
+        switch (_this2.state.status) {
+          case 1:
+            return client.balance > 0;
+          case 2:
+            return client.balance < 0;
+          default:
+            return true;
+        }
+      });
 
-      var clientsCode = this.state.clients.map(function (client) {
-        return _react2.default.createElement(_MobileClient2.default, { key: client.id, info: client });
+      var clientsCode = filterClient.map(function (client) {
+        return _react2.default.createElement(_MobileClient2.default, { key: client.id, client: client });
       });
 
       return _react2.default.createElement(
         'div',
         { className: 'MobileCompany' },
-        _react2.default.createElement('input', { type: 'button', value: '=\u041C\u0422\u0421', onClick: this.setName1 }),
-        _react2.default.createElement('input', { type: 'button', value: '=A1', onClick: this.setName2 }),
+        _react2.default.createElement(_MobileFilter2.default, null),
         _react2.default.createElement(
-          'div',
-          { className: 'MobileCompanyName' },
-          '\u041A\u043E\u043C\u043F\u0430\u043D\u0438\u044F \xAB',
-          this.state.name,
-          '\xBB'
+          'table',
+          { className: 'MobileClient' },
+          _react2.default.createElement(
+            'thead',
+            null,
+            _react2.default.createElement(
+              'tr',
+              null,
+              _react2.default.createElement(
+                'td',
+                null,
+                '\u0424\u0430\u043C\u0438\u043B\u0438\u044F'
+              ),
+              _react2.default.createElement(
+                'td',
+                null,
+                '\u0418\u043C\u044F'
+              ),
+              _react2.default.createElement(
+                'td',
+                null,
+                '\u041E\u0442\u0447\u0435\u0441\u0442\u0432\u043E'
+              ),
+              _react2.default.createElement(
+                'td',
+                null,
+                '\u0411\u0430\u043B\u0430\u043D\u0441'
+              ),
+              _react2.default.createElement(
+                'td',
+                null,
+                '\u0421\u0442\u0430\u0442\u0443\u0441'
+              ),
+              _react2.default.createElement(
+                'td',
+                null,
+                '\u0420\u0435\u0434\u0430\u043A\u0442\u0438\u0440\u043E\u0432\u0430\u0442\u044C'
+              ),
+              _react2.default.createElement(
+                'td',
+                null,
+                '\u0423\u0434\u0430\u043B\u0438\u0442\u044C'
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'tbody',
+            null,
+            clientsCode
+          )
         ),
-        _react2.default.createElement(
-          'div',
-          { className: 'MobileCompanyClients' },
-          clientsCode
-        ),
-        _react2.default.createElement('input', { type: 'button', value: '\u0421\u0438\u0434\u043E\u0440\u043E\u0432=230', onClick: this.setBalance1 }),
-        _react2.default.createElement('input', { type: 'button', value: '\u0421\u0438\u0434\u043E\u0440\u043E\u0432=250', onClick: this.setBalance2 })
+        _react2.default.createElement(_MobileForm2.default, { client: this.state.editClient, isEditMode: this.state.isEditMode
+        })
       );
     }
   }]);
@@ -30666,17 +30782,18 @@ var MobileCompany = function (_React$PureComponent) {
 }(_react2.default.PureComponent);
 
 MobileCompany.propTypes = {
-  name: _propTypes2.default.string.isRequired,
   clients: _propTypes2.default.arrayOf(_propTypes2.default.shape({
     id: _propTypes2.default.number.isRequired,
-    fio: _propTypes2.default.string.isRequired,
+    fam: _propTypes2.default.string.isRequired,
+    im: _propTypes2.default.string.isRequired,
+    otch: _propTypes2.default.string.isRequired,
     balance: _propTypes2.default.number.isRequired
   }))
 };
 exports.default = MobileCompany;
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30698,7 +30815,7 @@ exports.isValidElementType=function(a){return"string"===typeof a||"function"===t
 
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30887,7 +31004,7 @@ exports.typeOf = typeOf;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30900,12 +31017,12 @@ exports.typeOf = typeOf;
 
 
 
-var ReactIs = __webpack_require__(6);
+var ReactIs = __webpack_require__(7);
 var assign = __webpack_require__(2);
 
-var ReactPropTypesSecret = __webpack_require__(3);
-var has = __webpack_require__(7);
-var checkPropTypes = __webpack_require__(23);
+var ReactPropTypesSecret = __webpack_require__(5);
+var has = __webpack_require__(8);
+var checkPropTypes = __webpack_require__(24);
 
 var printWarning = function() {};
 
@@ -31505,7 +31622,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31521,9 +31638,9 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 var printWarning = function() {};
 
 if (process.env.NODE_ENV !== 'production') {
-  var ReactPropTypesSecret = __webpack_require__(3);
+  var ReactPropTypesSecret = __webpack_require__(5);
   var loggedTypeFailures = {};
-  var has = __webpack_require__(7);
+  var has = __webpack_require__(8);
 
   printWarning = function(text) {
     var message = 'Warning: ' + text;
@@ -31616,7 +31733,7 @@ module.exports = checkPropTypes;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31629,7 +31746,7 @@ module.exports = checkPropTypes;
 
 
 
-var ReactPropTypesSecret = __webpack_require__(3);
+var ReactPropTypesSecret = __webpack_require__(5);
 
 function emptyFunction() {}
 function emptyFunctionWithReset() {}
@@ -31688,7 +31805,315 @@ module.exports = function() {
 
 
 /***/ }),
-/* 25 */
+/* 26 */
+/***/ (function(module, exports) {
+
+// Copyright Joyent, Inc. and other Node contributors.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a
+// copy of this software and associated documentation files (the
+// "Software"), to deal in the Software without restriction, including
+// without limitation the rights to use, copy, modify, merge, publish,
+// distribute, sublicense, and/or sell copies of the Software, and to permit
+// persons to whom the Software is furnished to do so, subject to the
+// following conditions:
+//
+// The above copyright notice and this permission notice shall be included
+// in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+// USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+function EventEmitter() {
+  this._events = this._events || {};
+  this._maxListeners = this._maxListeners || undefined;
+}
+module.exports = EventEmitter;
+
+// Backwards-compat with node 0.10.x
+EventEmitter.EventEmitter = EventEmitter;
+
+EventEmitter.prototype._events = undefined;
+EventEmitter.prototype._maxListeners = undefined;
+
+// By default EventEmitters will print a warning if more than 10 listeners are
+// added to it. This is a useful default which helps finding memory leaks.
+EventEmitter.defaultMaxListeners = 10;
+
+// Obviously not all Emitters should be limited to 10. This function allows
+// that to be increased. Set to zero for unlimited.
+EventEmitter.prototype.setMaxListeners = function(n) {
+  if (!isNumber(n) || n < 0 || isNaN(n))
+    throw TypeError('n must be a positive number');
+  this._maxListeners = n;
+  return this;
+};
+
+EventEmitter.prototype.emit = function(type) {
+  var er, handler, len, args, i, listeners;
+
+  if (!this._events)
+    this._events = {};
+
+  // If there is no 'error' event listener then throw.
+  if (type === 'error') {
+    if (!this._events.error ||
+        (isObject(this._events.error) && !this._events.error.length)) {
+      er = arguments[1];
+      if (er instanceof Error) {
+        throw er; // Unhandled 'error' event
+      } else {
+        // At least give some kind of context to the user
+        var err = new Error('Uncaught, unspecified "error" event. (' + er + ')');
+        err.context = er;
+        throw err;
+      }
+    }
+  }
+
+  handler = this._events[type];
+
+  if (isUndefined(handler))
+    return false;
+
+  if (isFunction(handler)) {
+    switch (arguments.length) {
+      // fast cases
+      case 1:
+        handler.call(this);
+        break;
+      case 2:
+        handler.call(this, arguments[1]);
+        break;
+      case 3:
+        handler.call(this, arguments[1], arguments[2]);
+        break;
+      // slower
+      default:
+        args = Array.prototype.slice.call(arguments, 1);
+        handler.apply(this, args);
+    }
+  } else if (isObject(handler)) {
+    args = Array.prototype.slice.call(arguments, 1);
+    listeners = handler.slice();
+    len = listeners.length;
+    for (i = 0; i < len; i++)
+      listeners[i].apply(this, args);
+  }
+
+  return true;
+};
+
+EventEmitter.prototype.addListener = function(type, listener) {
+  var m;
+
+  if (!isFunction(listener))
+    throw TypeError('listener must be a function');
+
+  if (!this._events)
+    this._events = {};
+
+  // To avoid recursion in the case that type === "newListener"! Before
+  // adding it to the listeners, first emit "newListener".
+  if (this._events.newListener)
+    this.emit('newListener', type,
+              isFunction(listener.listener) ?
+              listener.listener : listener);
+
+  if (!this._events[type])
+    // Optimize the case of one listener. Don't need the extra array object.
+    this._events[type] = listener;
+  else if (isObject(this._events[type]))
+    // If we've already got an array, just append.
+    this._events[type].push(listener);
+  else
+    // Adding the second element, need to change to array.
+    this._events[type] = [this._events[type], listener];
+
+  // Check for listener leak
+  if (isObject(this._events[type]) && !this._events[type].warned) {
+    if (!isUndefined(this._maxListeners)) {
+      m = this._maxListeners;
+    } else {
+      m = EventEmitter.defaultMaxListeners;
+    }
+
+    if (m && m > 0 && this._events[type].length > m) {
+      this._events[type].warned = true;
+      console.error('(node) warning: possible EventEmitter memory ' +
+                    'leak detected. %d listeners added. ' +
+                    'Use emitter.setMaxListeners() to increase limit.',
+                    this._events[type].length);
+      if (typeof console.trace === 'function') {
+        // not supported in IE 10
+        console.trace();
+      }
+    }
+  }
+
+  return this;
+};
+
+EventEmitter.prototype.on = EventEmitter.prototype.addListener;
+
+EventEmitter.prototype.once = function(type, listener) {
+  if (!isFunction(listener))
+    throw TypeError('listener must be a function');
+
+  var fired = false;
+
+  function g() {
+    this.removeListener(type, g);
+
+    if (!fired) {
+      fired = true;
+      listener.apply(this, arguments);
+    }
+  }
+
+  g.listener = listener;
+  this.on(type, g);
+
+  return this;
+};
+
+// emits a 'removeListener' event iff the listener was removed
+EventEmitter.prototype.removeListener = function(type, listener) {
+  var list, position, length, i;
+
+  if (!isFunction(listener))
+    throw TypeError('listener must be a function');
+
+  if (!this._events || !this._events[type])
+    return this;
+
+  list = this._events[type];
+  length = list.length;
+  position = -1;
+
+  if (list === listener ||
+      (isFunction(list.listener) && list.listener === listener)) {
+    delete this._events[type];
+    if (this._events.removeListener)
+      this.emit('removeListener', type, listener);
+
+  } else if (isObject(list)) {
+    for (i = length; i-- > 0;) {
+      if (list[i] === listener ||
+          (list[i].listener && list[i].listener === listener)) {
+        position = i;
+        break;
+      }
+    }
+
+    if (position < 0)
+      return this;
+
+    if (list.length === 1) {
+      list.length = 0;
+      delete this._events[type];
+    } else {
+      list.splice(position, 1);
+    }
+
+    if (this._events.removeListener)
+      this.emit('removeListener', type, listener);
+  }
+
+  return this;
+};
+
+EventEmitter.prototype.removeAllListeners = function(type) {
+  var key, listeners;
+
+  if (!this._events)
+    return this;
+
+  // not listening for removeListener, no need to emit
+  if (!this._events.removeListener) {
+    if (arguments.length === 0)
+      this._events = {};
+    else if (this._events[type])
+      delete this._events[type];
+    return this;
+  }
+
+  // emit removeListener for all listeners on all events
+  if (arguments.length === 0) {
+    for (key in this._events) {
+      if (key === 'removeListener') continue;
+      this.removeAllListeners(key);
+    }
+    this.removeAllListeners('removeListener');
+    this._events = {};
+    return this;
+  }
+
+  listeners = this._events[type];
+
+  if (isFunction(listeners)) {
+    this.removeListener(type, listeners);
+  } else if (listeners) {
+    // LIFO order
+    while (listeners.length)
+      this.removeListener(type, listeners[listeners.length - 1]);
+  }
+  delete this._events[type];
+
+  return this;
+};
+
+EventEmitter.prototype.listeners = function(type) {
+  var ret;
+  if (!this._events || !this._events[type])
+    ret = [];
+  else if (isFunction(this._events[type]))
+    ret = [this._events[type]];
+  else
+    ret = this._events[type].slice();
+  return ret;
+};
+
+EventEmitter.prototype.listenerCount = function(type) {
+  if (this._events) {
+    var evlistener = this._events[type];
+
+    if (isFunction(evlistener))
+      return 1;
+    else if (evlistener)
+      return evlistener.length;
+  }
+  return 0;
+};
+
+EventEmitter.listenerCount = function(emitter, type) {
+  return emitter.listenerCount(type);
+};
+
+function isFunction(arg) {
+  return typeof arg === 'function';
+}
+
+function isNumber(arg) {
+  return typeof arg === 'number';
+}
+
+function isObject(arg) {
+  return typeof arg === 'object' && arg !== null;
+}
+
+function isUndefined(arg) {
+  return arg === void 0;
+}
+
+
+/***/ }),
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31698,17 +32123,21 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(5);
+var _propTypes = __webpack_require__(4);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-__webpack_require__(26);
+var _events = __webpack_require__(3);
+
+__webpack_require__(28);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -31732,32 +32161,75 @@ var MobileClient = function (_React$PureComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = MobileClient.__proto__ || Object.getPrototypeOf(MobileClient)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-      info: _this.props.info
-    }, _this.componentDidUpdate = function (oldProps, oldState) {
-      console.log("MobileClient id=" + _this.props.info.id + " componentDidUpdate");
-      if (_this.props.info.balance !== _this.state.info.balance) _this.setState({ info: _this.props.info });
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = MobileClient.__proto__ || Object.getPrototypeOf(MobileClient)).call.apply(_ref, [this].concat(args))), _this), _this.state = _extends({}, _this.props.client), _this.componentDidUpdate = function (prevProps) {
+      var newProps = _this.props.client.id !== prevProps.client.id || _this.props.client.balance !== prevProps.client.balance || _this.props.client.fam !== prevProps.client.fam || _this.props.client.im !== prevProps.client.im || _this.props.client.otch !== prevProps.client.otch;
+
+      // Если пропсы не изменились, новый запрос может и не требоваться.
+
+      if (newProps) {
+        _this.setState(_extends({}, _this.props.client, { FIO: _extends({}, _this.props.client.FIO) }));
+      }
+    }, _this.delete = function (e) {
+      _events.mobileEvents.emit('EventDelete', _this.state.id);
+    }, _this.edit = function () {
+      _events.mobileEvents.emit('EventEdit', _this.state);
     }, _temp), _possibleConstructorReturn(_this, _ret);
   }
+  // не мутируем, делаем копию 
+
 
   _createClass(MobileClient, [{
     key: 'render',
     value: function render() {
+      console.log("MobileClient id=" + this.props.client.id + " render");
 
-      console.log("MobileClient id=" + this.state.info.id + " render");
+      var isActive = this.state.balance > 0;
 
       return _react2.default.createElement(
-        'div',
-        { className: 'MobileClient' },
+        'tr',
+        null,
         _react2.default.createElement(
-          'span',
-          { className: 'MobileClientBalance' },
-          this.state.info.balance
+          'td',
+          null,
+          this.state.fam
         ),
         _react2.default.createElement(
-          'span',
-          { className: 'MobileClientFIO' },
-          this.state.info.fio
+          'td',
+          null,
+          this.state.im
+        ),
+        _react2.default.createElement(
+          'td',
+          null,
+          this.state.otch
+        ),
+        _react2.default.createElement(
+          'td',
+          null,
+          this.state.balance
+        ),
+        _react2.default.createElement(
+          'td',
+          { style: { backgroundColor: isActive ? ' rgb(12, 184, 12)' : 'red' } },
+          isActive ? 'Active' : 'Blocked'
+        ),
+        _react2.default.createElement(
+          'td',
+          null,
+          _react2.default.createElement(
+            'button',
+            { className: 'MobileClientEdit', onClick: this.edit },
+            '\u0420\u0435\u0434\u0430\u043A\u0442\u0438\u0440\u043E\u0432\u0430\u0442\u044C'
+          )
+        ),
+        _react2.default.createElement(
+          'td',
+          null,
+          _react2.default.createElement(
+            'button',
+            { className: 'MobileClientDelete', onClick: this.delete },
+            '\u0423\u0434\u0430\u043B\u0438\u0442\u044C'
+          )
         )
       );
     }
@@ -31767,22 +32239,295 @@ var MobileClient = function (_React$PureComponent) {
 }(_react2.default.PureComponent);
 
 MobileClient.propTypes = {
-  info: _propTypes2.default.shape({
+  client: _propTypes2.default.shape({
     id: _propTypes2.default.number.isRequired,
-    fio: _propTypes2.default.string.isRequired,
+    fam: _propTypes2.default.string.isRequired,
+    im: _propTypes2.default.string.isRequired,
+    otch: _propTypes2.default.string.isRequired,
     balance: _propTypes2.default.number.isRequired
   })
 };
 exports.default = MobileClient;
 
+/*class MobileClient extends React.PureComponent {
+
+  static propTypes = {
+    info:PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      fio: PropTypes.string.isRequired,
+      balance: PropTypes.number.isRequired,
+    }),
+  };
+
+  state = {
+    info: this.props.info,
+  };
+
+  componentDidUpdate = (oldProps, oldState) => {
+    console.log("MobileClient id="+this.props.info.id+" componentDidUpdate");
+    if ( this.props.info.balance!==this.state.info.balance )
+      this.setState({info:this.props.info});
+  };
+
+  render() {
+
+    console.log("MobileClient id="+this.state.info.id+" render");
+    
+    return (
+      <div className='MobileClient'>
+        <span className='MobileClientBalance'>{this.state.info.balance}</span>
+        <span className='MobileClientFIO'>{this.state.info.fio}</span>
+      </div>
+    );
+
+  }
+
+}
+
+export default MobileClient;*/
+
 /***/ }),
-/* 26 */
+/* 28 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 27 */
+/* 29 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(4);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _events = __webpack_require__(3);
+
+__webpack_require__(30);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var MobileForm = function (_React$PureComponent) {
+    _inherits(MobileForm, _React$PureComponent);
+
+    function MobileForm(props) {
+        _classCallCheck(this, MobileForm);
+
+        var _this = _possibleConstructorReturn(this, (MobileForm.__proto__ || Object.getPrototypeOf(MobileForm)).call(this, props));
+
+        _this.save = function (e) {
+            var abonent = {
+                id: _this.props.client.id,
+                fam: _this.famInput.current ? _this.famInput.current.value : _this.props.client.fam,
+                im: _this.imInput.current ? _this.imInput.current.value : _this.props.client.im,
+                otch: _this.otchInput.current ? _this.otchInput.current.value : _this.props.client.otch,
+                balance: Number(_this.balanceInput.current ? _this.balanceInput.current.value : _this.props.client.balance)
+            };
+            _events.mobileEvents.emit('EventSaveClient', abonent); // выпускаем новое событие в поток событий
+        };
+
+        _this.create = function () {
+            _events.mobileEvents.emit('EventCreate');
+        };
+
+        _this.cancel = function () {
+            _events.mobileEvents.emit('EventCancel');
+        };
+
+        _this.famInput = _react2.default.createRef();
+        _this.imInput = _react2.default.createRef();
+        _this.otchInput = _react2.default.createRef();
+        _this.balanceInput = _react2.default.createRef();
+        return _this;
+    }
+
+    _createClass(MobileForm, [{
+        key: 'render',
+        value: function render() {
+
+            console.log('MobileForm render');
+
+            if (this.props.isEditMode) {
+                return _react2.default.createElement(
+                    'div',
+                    { className: 'MobileForm' },
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'FormRow' },
+                        _react2.default.createElement(
+                            'span',
+                            null,
+                            '\u0424\u0430\u043C\u0438\u043B\u0438\u044F'
+                        ),
+                        _react2.default.createElement('input', { ref: this.famInput, type: 'text', defaultValue: this.props.client.fam })
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'FormRow' },
+                        _react2.default.createElement(
+                            'span',
+                            null,
+                            '\u0418\u043C\u044F'
+                        ),
+                        _react2.default.createElement('input', { ref: this.imInput, type: 'text', defaultValue: this.props.client.im })
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'FormRow' },
+                        _react2.default.createElement(
+                            'span',
+                            null,
+                            '\u041E\u0442\u0447\u0435\u0441\u0442\u0432\u043E'
+                        ),
+                        _react2.default.createElement('input', { ref: this.otchInput, type: 'text', defaultValue: this.props.client.otch })
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'FormRow' },
+                        _react2.default.createElement(
+                            'span',
+                            null,
+                            '\u0411\u0430\u043B\u0430\u043D\u0441'
+                        ),
+                        _react2.default.createElement('input', { ref: this.balanceInput, type: 'number', defaultValue: this.props.client.balance })
+                    ),
+                    _react2.default.createElement(
+                        'button',
+                        { className: 'SaveButton', onClick: this.save },
+                        '\u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C'
+                    ),
+                    _react2.default.createElement(
+                        'button',
+                        { className: 'CancelButton', onClick: this.cancel },
+                        '\u041E\u0442\u043C\u0435\u043D\u0430'
+                    )
+                );
+            } else {
+                return _react2.default.createElement(
+                    'button',
+                    { className: 'CreateForm', onClick: this.create },
+                    ' \u0421\u043E\u0437\u0434\u0430\u0442\u044C'
+                );
+            }
+        }
+    }]);
+
+    return MobileForm;
+}(_react2.default.PureComponent);
+
+MobileForm.propTypes = {
+    client: _propTypes2.default.shape({
+        id: _propTypes2.default.number.isRequired,
+        fam: _propTypes2.default.string.isRequired,
+        im: _propTypes2.default.string.isRequired,
+        otch: _propTypes2.default.string.isRequired,
+        balance: _propTypes2.default.number.isRequired
+    }),
+    isEditMode: _propTypes2.default.bool.isRequired
+};
+exports.default = MobileForm;
+
+/***/ }),
+/* 30 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 31 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _events = __webpack_require__(3);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var MobileFilter = function (_React$PureComponent) {
+    _inherits(MobileFilter, _React$PureComponent);
+
+    function MobileFilter() {
+        _classCallCheck(this, MobileFilter);
+
+        return _possibleConstructorReturn(this, (MobileFilter.__proto__ || Object.getPrototypeOf(MobileFilter)).apply(this, arguments));
+    }
+
+    _createClass(MobileFilter, [{
+        key: 'render',
+        value: function render() {
+
+            console.log("MobileFilter render");
+
+            return _react2.default.createElement(
+                'div',
+                { className: 'Filter' },
+                _react2.default.createElement(
+                    'button',
+                    { className: 'ButtonAll', onClick: function onClick() {
+                            return _events.mobileEvents.emit('EventAll');
+                        } },
+                    '\u0412\u0441\u0435'
+                ),
+                _react2.default.createElement(
+                    'button',
+                    { className: 'ButtonActive', onClick: function onClick() {
+                            return _events.mobileEvents.emit('EventActive');
+                        } },
+                    '\u0410\u043A\u0442\u0438\u0432\u043D\u044B\u0435'
+                ),
+                _react2.default.createElement(
+                    'button',
+                    { className: 'ButtonBlocked', onClick: function onClick() {
+                            return _events.mobileEvents.emit('EventBlocked');
+                        } },
+                    '\u0417\u0430\u0431\u043B\u043E\u043A\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u044B\u0435'
+                )
+            );
+        }
+    }]);
+
+    return MobileFilter;
+}(_react2.default.PureComponent);
+
+exports.default = MobileFilter;
+
+/***/ }),
+/* 32 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

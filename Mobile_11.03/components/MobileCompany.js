@@ -110,6 +110,7 @@ class MobileCompany extends React.PureComponent {
   filterBlocked = () => this.setState({ status: 2 })
 
   render() {
+    console.log("MobileCompany render");
     const filterClient = this.state.clients.filter((client) => {
       switch (this.state.status) {
         case 1: return client.balance > 0;

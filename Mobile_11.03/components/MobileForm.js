@@ -45,6 +45,8 @@ mobileEvents.emit('EventSaveClient', abonent);    // выпускаем ново
 
     render() {
 
+        console.log('MobileForm render')
+
         if (this.props.isEditMode) {
             return (
                 <div className='MobileForm' >

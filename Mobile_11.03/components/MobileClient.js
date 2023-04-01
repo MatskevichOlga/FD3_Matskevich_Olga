@@ -39,6 +39,7 @@ class MobileClient extends React.PureComponent {
   }
 
   render() {
+    console.log("MobileClient id=" + this.props.client.id + " render");
 
     const isActive = this.state.balance > 0;
 

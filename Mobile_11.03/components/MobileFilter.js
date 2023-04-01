@@ -5,6 +5,8 @@ import { mobileEvents } from './events';
 class MobileFilter extends React.PureComponent {
 
     render() {
+
+        console.log("MobileFilter render");
  
         return (
             <div className='Filter'>
