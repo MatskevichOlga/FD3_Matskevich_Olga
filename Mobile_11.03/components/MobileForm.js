@@ -26,7 +26,7 @@ class MobileForm extends React.PureComponent {
         this.balanceInput = React.createRef();
     }
 
-    save = (EO) => {
+    save = (e) => {
         const abonent = {
                 id: this.props.client.id,
                 fam: this.famInput.current ? this.famInput.current.value : this.props.client.fam,
