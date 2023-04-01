@@ -1,17 +1,14 @@
-﻿.MobileCompany
-{
-  border: double gray 3px;
-  width: 180px;
-  padding: 3px 7px;
-  background-color: lightyellow;
+﻿#container{
+  display: flex;
+  justify-content: center;
 }
-
-.MobileCompanyName
-{
-  font-weight: bold;
+.MobileCompany{
+  margin-top: 50px;
 }
-
-.MobileCompanyClients
-{
-  padding-top: 5px;
+.MobileClient{
+  margin: 8px 0;
+}
+.MobileClient td{
+  border: 1px solid #7f9af4;
+  padding: 10px;
 }

@@ -3,17 +3,16 @@ import ReactDOM from 'react-dom';
 
 import MobileCompany from './components/MobileCompany';
 
-let companyName='A1';
-let clientsArr=[ 
-  {id:101, fio:"Иванов И.И.", balance:200}, 
-  {id:105, fio:"Сидоров С.С.", balance:250}, 
-  {id:110, fio:"Петров П.П.", balance:180},
-  {id:120, fio:"Григорьев Г.Г.", balance:220},
+let clientsArr = [
+  { id: 101, fam: "Иванов", im: "Иван", otch: "Иванович", balance: 200 },
+  { id: 102, fam: "Сидоров", im: "Сидор", otch: "Сидорович" , balance: 250 },
+  { id: 103, fam: "Петров", im: "Пётр", otch: "Петрович" , balance: 180 },
+  { id: 104, fam: "Григорьев", im: "Григорий", otch: "Григорьевич" , balance: -220 },
 ];
+
 
 ReactDOM.render(
   <MobileCompany 
-    name={companyName}
     clients={clientsArr}
   />
   , document.getElementById('container') 
