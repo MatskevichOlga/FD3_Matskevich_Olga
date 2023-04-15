@@ -1,0 +1,100 @@
+{
+  "categories": [
+    { "name": "Все" },
+    { "name": "Море" },
+    { "name": "Горы" },
+    { "name": "Архитектура" },
+    { "name": "Города" },
+    { "name": "Животные" },
+    { "name": "Люди" },
+    { "name": "Автомобили" }
+  ],
+  "collections": [
+    {
+      "category": 5,
+      "name": "Животные",
+      "photos": [
+        "https://media.istockphoto.com/id/1168451046/es/foto/gato-y-perro-durmiendo-el-cachorro-y-el-gatito-duermen.jpg?s=612x612&w=0&k=20&c=U5QsXX9zQesYGxgAs8I8dW766VyKhDMfCMgaBYpbPoU=",
+        "https://images.freeimages.com/images/previews/22d/little-cat-3-1636609.jpg",
+        "https://media.istockphoto.com/id/856455230/photo/selfie-cats.jpg?b=1&s=612x612&w=0&k=20&c=1n32I3LjrdzlMG0RLF1XfRhI6HUdPYKm9uALpWnk-0Y=",
+        "https://media.istockphoto.com/id/612495640/photo/cape-mountain-zebra.jpg?s=612x612&w=0&k=20&c=KTtaKIypy_kOWGPMTTvFwXVO0R8neBZ4t62uSNj55yU=",
+        "https://media.istockphoto.com/photos/dogs-playing-picture-id481634156?b=1&k=20&m=481634156&s=612x612&w=0&h=6Et7leZ5JzD2FOs7_MTI2Z5KkfA5mxf1LJiaHuqQ5_o=",
+        "https://images.freeimages.com/images/previews/28f/the-black-and-white-lemur-1638341.jpg",
+        "https://images.freeimages.com/images/large-previews/314/goats-1639570.jpg"
+      ]
+    },
+    {
+      "category": 6,
+      "name": "Люди",
+      "photos": [
+        "https://images.freeimages.com/images/large-previews/38b/farmers-are-walking-at-sunset-1639677.jpg",
+        "https://media.istockphoto.com/id/1356310334/photo/farmers-on-field.jpg?s=612x612&w=0&k=20&c=dlluTRYYYYW6SM-0NiFGh7ZVcmSZ4nIg9Q6z0iNb-FQ=",
+        "https://media.istockphoto.com/id/856014690/photo/woman-sitting-at-the-table-on-the-beach-in-iceland.jpg?s=612x612&w=0&k=20&c=rQHSI4GgL8GslcKkCOGUM4QIT_IO8wMjDZ-XH9IXpT0=",
+        "https://media.istockphoto.com/id/1369475365/photo/barefoot-women-doing-yoga-exercises-outdoors-in-the-mountains.jpg?s=612x612&w=0&k=20&c=9BwenCNLAtnonl90d0ch4a931FLhhfDB-4kJ1wioAak=",
+        "https://media.istockphoto.com/id/1072463200/photo/happy-family-on-a-lake-pier.jpg?s=612x612&w=0&k=20&c=Kwz7kUDTf9TuZ30plqX0fWhQMpTZFbLacXZ-dn88tQs=",
+        "https://media.istockphoto.com/id/516366912/photo/surfer-girls-by-the-sea-summer-is-here.jpg?s=612x612&w=0&k=20&c=EVChspDzfNd51SoiKwtaTx4KjhV_B5NyDXTS72wqTEw="
+      ]
+    },
+    {
+      "category": 2,
+      "name": "Горы",
+      "photos": [
+        "https://media.istockphoto.com/photos/moose-at-maroon-lake-a-young-moose-with-only-one-antler-walking-and-picture-id1288537145?b=1&k=20&m=1288537145&s=612x612&w=0&h=DhL2JQwoqCm8S1pjyCKLLpii-QC5OF-DGjowr6mBV4c=",
+        "https://images.freeimages.com/images/previews/db2/snowy-river-1640931.jpg",
+        "https://images.freeimages.com/images/previews/6b8/mountains-view-from-isthmus-peak-1640018.jpg",
+        "https://images.freeimages.com/images/previews/e8a/lupines-in-sunshine-1640017.jpg",
+        "https://images.freeimages.com/images/previews/16b/zanskar-valley-1640003.jpg",
+        "https://images.freeimages.com/images/previews/5da/glacier-lake-deep-blue-1641088.jpg"
+      ]
+    },
+    {
+      "category": 1,
+      "name": "Море",
+      "photos": [
+        "https://images.freeimages.com/images/previews/4ca/maldives-unseen-beauty-1641934.jpg",
+        "https://media.istockphoto.com/photos/first-person-point-of-view-of-a-woman-paddling-on-a-stand-up-paddle-picture-id1288844330?b=1&k=20&m=1288844330&s=612x612&w=0&h=weMmRsw-xSve3uF42pMfLf4MZFtAxlsk3ckRckmeTbY=",
+        "https://media.istockphoto.com/photos/clear-blue-aqua-marine-ocean-with-with-light-rays-coming-through-picture-id1301264394?b=1&k=20&m=1301264394&s=612x612&w=0&h=5HfA5vmE3_ScT9AVLXR531G99SV2u_dqbLQqyzcMANI=",
+        "https://images.freeimages.com/images/previews/19b/summer-holiday-scene-1-1640933.jpg",
+        "https://images.freeimages.com/images/previews/c04/light-house-1641116.jpg",
+        "https://images.freeimages.com/images/previews/d78/blue-ocean-1641139.jpg",
+        "https://images.freeimages.com/images/previews/e2b/river-sunset-1640524.jpg",
+        "https://images.freeimages.com/images/previews/5a4/fishing-in-the-sea-1641750.jpg"
+      ]
+    },
+
+    {
+      "category": 3,
+      "name": "Архитектура",
+      "photos": [
+        "https://media.istockphoto.com/id/182831214/photo/modern-glass-staircase.jpg?b=1&s=612x612&w=0&k=20&c=iKogl8AqfxQuE6ciT0AOfmawmKsjhig0ViapQ6mjs00=",
+        "https://media.istockphoto.com/id/174849311/photo/los-angeles-skyline.jpg?b=1&s=612x612&w=0&k=20&c=p3UFrNx5312nMgbM7c29Gx-VTP6FQv1lu33Hon-evkY=",
+        "https://media.istockphoto.com/id/1071586962/photo/view-of-downtown-los-angeles-seen-from-observation-deck-of-los-angeles-city-hall.jpg?b=1&s=612x612&w=0&k=20&c=LpYP14F7yWquUnO8Fl12kbTqE_Xw9HJxW7jcgExTRHA=",
+        "https://media.istockphoto.com/id/176161833/photo/los-angeles.jpg?b=1&s=612x612&w=0&k=20&c=bB3T7qS_FEAX6k-UCXsrEniByAOdFpqwXL9TZWRBJU8="
+      ]
+    },
+
+    {
+      "category": 4,
+      "name": "Города",
+      "photos": [
+        "https://images.freeimages.com/images/previews/418/london-tower-1640384.jpg",
+        "https://images.freeimages.com/images/previews/091/anshun-bridge-at-night-chengdu-china-1639680.jpg",
+        "https://images.freeimages.com/images/previews/741/srilanka-city-1639465.jpg",
+        "https://images.freeimages.com/images/previews/cbe/architecture-in-new-york-1-1641332.jpg"
+      ]
+    },
+    {
+      "category": 7,
+      "name": "Автомобили",
+      "photos": [
+        "https://images.freeimages.com/images/large-previews/3cb/historic-police-car-1640173.jpg",
+        "https://images.freeimages.com/images/large-previews/236/cars-n-trucks-1448426.jpg",
+        "https://images.freeimages.com/images/large-previews/c96/red-sport-car-1448509.jpg",
+        "https://media.istockphoto.com/id/914838516/photo/blue-sports-car-driving-on-racetrack.jpg?s=612x612&w=0&k=20&c=iMDRokoyBt2igZtqV_OanaW-MY49nSoAZQfqioDoY1A=",
+        "https://media.istockphoto.com/id/1286476808/photo/gray-sportscar-driving-on-a-road.jpg?s=612x612&w=0&k=20&c=gquu3mJmEXa0ld90l-4ChRzVMscojyj6YWVBKXj5Sgw=",
+        "https://media.istockphoto.com/id/1397917759/photo/3d-car-sedan-rides-on-the-road-to-meet-the-sun-concept-3d-render-for-advertising-auto-products.jpg?s=612x612&w=0&k=20&c=cCCL1yWLmUrC443W_wneMoUgbbvs-IrQ1Zg5lDvmffQ=",
+        "https://media.istockphoto.com/id/172486010/photo/suv-car-in-nature.jpg?s=612x612&w=0&k=20&c=LlJd7uVdKST4qRPHKCsdyZ_oKSFQVJIVvC8lCXea9kk="
+      ]
+    }
+  ]
+}
