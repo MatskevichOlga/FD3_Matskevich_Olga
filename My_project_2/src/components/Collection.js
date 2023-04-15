@@ -12,9 +12,8 @@ import "swiper/css/pagination";
 import {Keyboard, Scrollbar,Autoplay, FreeMode, Navigation, Thumbs, EffectCreative, Pagination } from "swiper";
 
  export const Collection = ({ images, name }) => {
- const [img, setImg]=useState(true);
- //const [count, setCount]=useState(0);
- 
+ const [show, setShow]=useState(true);
+//const onClick = () => setImg(!img);
     return (
         <div className="collection">
             <Swiper
@@ -49,12 +48,11 @@ import {Keyboard, Scrollbar,Autoplay, FreeMode, Navigation, Thumbs, EffectCreati
             className="mySwiper2"
                     >
   <ul>{images.map((image, index) =>
-      <SwiperSlide onClick={() => setImg(false)} key={index}>
+      <SwiperSlide  img={show} onClick={() =>setShow(false)} setShow={setShow}  key={index}>
         <li key={index}>
-          <img className="collection__big" src= {image} alt="Item" />
- 
-           </li>
-      {img}
+          <img  className="collection__big" src= {image} alt="Item" />
+
+           </li>    
         </SwiperSlide>
         )
         }      
@@ -73,4 +71,7 @@ import {Keyboard, Scrollbar,Autoplay, FreeMode, Navigation, Thumbs, EffectCreati
          <div className="buttons-collection">
     <button className="reset-input btn-add" data-title="Добавить фото">Добавить</button>
   </div> 
+              <div className="buttons-collection">
+          <button className="reset-input btn-del" onClick={() =>setShow(false)} data-title="Удалить фото">Удалить</button>
+       </div> 
   */
