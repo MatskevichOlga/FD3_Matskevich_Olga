@@ -12,7 +12,7 @@ import "swiper/css/pagination";
 import {Keyboard, Scrollbar,Autoplay, FreeMode, Navigation, Thumbs, EffectCreative, Pagination } from "swiper";
 
  export const Collection = ({ images, name }) => {
- const [show, setShow]=useState(true);
+ //const [show, setShow]=useState(true);
 //const onClick = () => setImg(!img);
     return (
         <div className="collection">
@@ -48,10 +48,9 @@ import {Keyboard, Scrollbar,Autoplay, FreeMode, Navigation, Thumbs, EffectCreati
             className="mySwiper2"
                     >
   <ul>{images.map((image, index) =>
-      <SwiperSlide  img={show} onClick={() =>setShow(false)} setShow={setShow}  key={index}>
+      <SwiperSlide key={index}>
         <li key={index}>
           <img  className="collection__big" src= {image} alt="Item" />
-
            </li>    
         </SwiperSlide>
         )
